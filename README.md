@@ -14,6 +14,6 @@ As by using this, you dont have to waste much of your time in deployment as it c
 
 <br>
 
-## <img src="https://n8n.io/brandguidelines/logo-white.svg" width="150"> 
+## <img src="https://n8n.io/brandguidelines/logo-white.svg" width="150"> : There’s nothing you can’t automate with n8n
 
 
