@@ -27,12 +27,17 @@ Its full form is **"Nodemation"** and there are 8 letters seperating n from n so
 
 - Downlaod <a href="https://www.docker.com/products/docker-desktop/">**Docker Desktop**</a> from there official website. Download as per your device requirements from it.
 - After installing docker, go to the Image tab and search for n8n, go for the n8n/latest one and download it.
-- Also after downloading, enter your folder directory were you want to store all your n8n workflows.
+- Also after downloading, enter your folder directory were you want to store all your n8n workflows carefully.
 - Go to the Container tab and there you can see your n8n is ready is deploy easily.
 - Run the command and create your personal account in it and you are good to go.
 - Then you can successfully run your workflows effortlessly.
 
 Here the youtube link if you have any additional queries ---> https://youtu.be/1QR-fz-JCA4
+
+Now i am going to show some of my workflows to you.
+
+## Workflows 
+
 
 
 
