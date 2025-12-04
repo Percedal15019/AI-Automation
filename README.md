@@ -23,7 +23,7 @@ Its full form is **"Nodemation"** and there are 8 letters seperating n from n so
 
 ## 🔃 Installation 
 
-**Disclaimer**: You can download n8n from the their official website @https://n8n.io/
+**Disclaimer**: You can download n8n from the their official website https://n8n.io/
 
 
 
