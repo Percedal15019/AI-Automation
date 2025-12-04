@@ -6,3 +6,7 @@ In this repository, i will talk about what and why i learn about AI automation a
 
 ## Introduction
 
+Sending custom messages to anyone, emails, posts and so on tasks can be automate with the help of some tools. In this repo, I will talk about **n8n** which is an automation platform were you can create your own easy and simple automation without coding.
+
+As by using this, you dont have to waste much of your time in deployment as it can be reused easily and modified as per users need. So i highly recommend it to you. In here, your visualization matters 😎
+
