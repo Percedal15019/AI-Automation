@@ -16,4 +16,6 @@ As by using this, you dont have to waste much of your time in deployment as it c
 
 ## <img src="https://n8n.io/brandguidelines/logo-white.svg" width="150">
 
+**n8n** is an open-source, low-code workflow automation tool that helps users connect applications and services to automate repetitive tasks. It uses a visual, node-based interface for building workflows, but also allows for custom code, making it flexible for both non-technical and technical users
+
 
