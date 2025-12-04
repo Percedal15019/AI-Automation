@@ -10,6 +10,6 @@ Sending custom messages to anyone, emails, posts and so on tasks can be automate
 
 As by using this, you dont have to waste much of your time in deployment as it can be reused easily and modified as per users need. So i highly recommend it to you. In here, your **Visualization** matters 😎
 
-## <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/N8n-logo-new.svg" width="100"> 
+## <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/N8n-logo-new.svg" width="300"> 
 
 
