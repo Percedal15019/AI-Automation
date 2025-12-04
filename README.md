@@ -6,7 +6,7 @@ In this repository, i will talk about what and why i learn about AI automation a
 
 <br>
 
-## Introduction
+## 👨‍💻 Introduction
 
 Sending custom messages to anyone, emails, posts and so on tasks can be automate with the help of some tools. In this repo, I will talk about **n8n** which is an automation platform were you can create your own easy and simple automation without coding.
 
@@ -19,4 +19,11 @@ As by using this, you dont have to waste much of your time in deployment as it c
 **n8n** is an open-source, low-code workflow automation tool that helps users connect applications and services to automate repetitive tasks. It uses a visual, node-based interface for building workflows, but also allows for custom code, making it flexible for both non-technical and technical users.
 
 
-Its full form is **"Nodemation"**.
+Its full form is **"Nodemation"** and there are 8 letters seperating n from n so n8n i dont care thats how it was named thats all.
+
+## 🔃 Installation 
+
+**Disclaimer**: You can download n8n from the their official website @https://n8n.io/
+
+
+
