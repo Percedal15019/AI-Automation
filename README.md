@@ -1,4 +1,4 @@
-<h1>AI Automation</h1>
+<h1>🤖 AI Automation 🤖</h1>
 
 **AI automation** is the use of artificial intelligence to automate tasks and processes that would typically require human intelligence. It combines AI technologies like machine learning and natural language processing with automation to perform intelligent actions, analyze data, and make decisions, going beyond traditional rule-based automation. This approach improves efficiency, accuracy, and productivity, allowing human workers to focus on more strategic work.
 
@@ -25,9 +25,14 @@ Its full form is **"Nodemation"** and there are 8 letters seperating n from n so
 
 **Disclaimer**: You can download n8n from the their official website https://n8n.io/ but i wanted to try a different approach so please take a note of it:
 
-- Downlaod <a href="https://www.docker.com/products/docker-desktop/">**Docker Desktop**</a> from there official website.
+- Downlaod <a href="https://www.docker.com/products/docker-desktop/">**Docker Desktop**</a> from there official website. Download as per your device requirements from it.
+- After installing docker, go to the Image tab and search for n8n, go for the n8n/latest one and download it.
+- Also after downloading, enter your folder directory were you want to store all your n8n workflows.
+- Go to the Container tab and there you can see your n8n is ready is deploy easily.
+- Run the command and create your personal account in it and you are good to go.
+- Then you can successfully run your workflows effortlessly.
 
-
+Here the youtube link if you have any additional queries ---> https://youtu.be/1QR-fz-JCA4
 
 
 
