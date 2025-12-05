@@ -40,6 +40,6 @@ Now i am going to show some of my workflows to you.
 
 ## 🏃‍♂️‍➡️ Workflows 
 
-<img src="images/AI%20Chatbot.png" width="40">
+<img src="images/AI%20Chatbot.png" width="500">
 
 
