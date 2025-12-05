@@ -42,7 +42,7 @@ Now i am going to show some of my workflows to you which i am working on.
 
 <h2>→ AI ChatBot</h2>
 
-An AI chatbot is a software program that uses artificial intelligence, specifically natural language processing (NLP) and machine learning (ML), to simulate human conversation and respond to user inquiries in real time.
+An **AI chatbot** is a software program that uses artificial intelligence, specifically natural language processing (NLP) and machine learning (ML), to simulate human conversation and respond to user inquiries in real time.
 
 This is one of my first workflows that I created the reason of this is that i can easily deploy my AI agents very easily in any of my projects or websites. Its super easy to understand and you just to insert your API key inside the credientials (if you have more API keys its recommended that you create new credentials)
 
@@ -57,7 +57,10 @@ It creates a small chat icon in the right bottom corner of your front page.
 <br>
 
 <h2>→ MCP Server</h2>
-<!-- <img src="images/MCP%20Server.png" width="500"> -->
+
+An **MCP server** is a program that acts as a backend for the Model Context Protocol (MCP), enabling AI agents to access external tools and data. It provides the AI with up-to-date information, such as business software, APIs, and knowledge bases, which helps make its responses more accurate and reduces "hallucinations".
+
+<img src="images/MCP%20Server.png" width="500">
 <!-- <img src="images/Web%20Search.png" width="500"> -->
  
 
