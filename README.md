@@ -48,7 +48,8 @@ The below is the visual representation:
 
 <img src="images/AI%20Chatbot.png" width="500">
 
-You can chat with it seamlessly and you would just need to put the URL from the 
+You can chat with it seamlessly and you would just need to put the URL from the "When chat message is received" just double click it and you can easily deploy it in any HTML or pythn code.
+It creates a small chat icon in the right bottom corner of your front page.
 
 <!-- <img src="images/MCP%20Server.png" width="500"> -->
 <!-- <img src="images/Web%20Search.png" width="500"> -->
