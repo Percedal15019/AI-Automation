@@ -66,8 +66,14 @@ In the above workflow, i have actually used a firecrawl as my MCP server, the ot
 
 <br>
 
-<h2>→ Web Search</h2>
+<h2>→ RAG Agent</h2>
 
- <img src="images/Web%20Search.png" width="500">
- 
+RAG, or Retrieval-Augmented Generation, is an AI technique that enhances large language models (LLMs) by first retrieving relevant information from external sources and then using that information to generate a more accurate and up-to-date response. It combines the strengths of a retrieval system (to find data) and a generative model (to create text).
+
+How RAG works:
+
+- Retrieval: When a user asks a question, a retriever component searches an external knowledge base (like documents, databases, or the internet) for relevant information.
+- Augmentation: The retrieved information is then combined with the original user prompt, creating an "augmented" prompt.
+- Generation: This augmented prompt is passed to an LLM, which uses both the original context and the newly retrieved data to generate a comprehensive and factually grounded response. 
+  
 
