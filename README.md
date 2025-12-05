@@ -40,7 +40,15 @@ Now i am going to show some of my workflows to you which i am working on.
 
 ## 🏃‍♂️‍➡️ Workflows 
 
-<!-- <img src="images/AI%20Chatbot.png" width="500"> -->
+<h2>AI ChatBot</h2>
+
+This is one of my first workflows that I created the reason of this is that i can easily deploy my AI agents very easily in any of my projects or websites. Its super easy to understand and you just to insert your API key inside the credientials (if you have more API keys its recommended that you create new credentials)
+
+The below is the visual representation: 
+<img src="images/AI%20Chatbot.png" width="500">
+
+
+
 <!-- <img src="images/MCP%20Server.png" width="500"> -->
 <!-- <img src="images/Web%20Search.png" width="500"> -->
  
