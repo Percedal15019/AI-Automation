@@ -32,9 +32,9 @@ Its full form is **"Nodemation"** and there are 8 letters seperating n from n so
 - Run the command and create your personal account in it and you are good to go.
 - Then you can successfully run your workflows effortlessly.
 
-Here the youtube link if you have any additional queries ---> https://youtu.be/1QR-fz-JCA4
+Here, the youtube link is provided if you have any additional queries ---> https://youtu.be/1QR-fz-JCA4
 
-Now i am going to show some of my workflows to you.
+Now i am going to show some of my workflows to you which i am working on.
 
 <br>
 
