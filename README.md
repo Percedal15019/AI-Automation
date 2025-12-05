@@ -60,7 +60,7 @@ It creates a small chat icon in the right bottom corner of your front page.
 
 An **MCP server** is a program that acts as a backend for the Model Context Protocol (MCP), enabling AI agents to access external tools and data. It provides the AI with up-to-date information, such as business software, APIs, and knowledge bases, which helps make its responses more accurate and reduces "hallucinations".
 
-<img src="images/MCP%20Server.png" width="500">
+<img src="images/MCP%20Server.png" width="600">
 
 In the above workflow, i have actually used a firecrawl as my MCP server, the other alternatives are brave browser's MCP server. Every MCP server has there respected API key so put it as per. 
 <!-- <img src="images/Web%20Search.png" width="500"> -->
