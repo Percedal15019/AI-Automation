@@ -40,7 +40,7 @@ Now i am going to show some of my workflows to you.
 
 ## 🏃‍♂️‍➡️ Workflows 
 
-![](images/AI%20Chatbot.png width="40")
+![](images/AI%20Chatbot.png)
 
 
 
