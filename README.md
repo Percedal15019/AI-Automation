@@ -52,6 +52,7 @@ You can chat with it seamlessly and you would just need to put the URL from the 
 
 It creates a small chat icon in the right bottom corner of your front page.
 
+<br>
 
 <h2>→ MCP Server</h2>
 <!-- <img src="images/MCP%20Server.png" width="500"> -->
