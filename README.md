@@ -68,7 +68,6 @@ In the above workflow, i have actually used a firecrawl as my MCP server, the ot
 
 <h2>→ Web Search</h2>
 
-
-<!-- <img src="images/Web%20Search.png" width="500"> -->
+ <img src="images/Web%20Search.png" width="500">
  
 
