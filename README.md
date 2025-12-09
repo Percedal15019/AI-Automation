@@ -93,17 +93,17 @@ The following are the images of the Fully Understanding and Reliable RAG Agent w
 
 From the First image, we have understand that: 
 
-1. **The Trigger (Start)**
+1. **The Trigger (Start):**
 
 - Node: When clicking 'Execute workflow'
 - Function: This is a manual trigger. The process starts only when a user explicitly clicks the "Test" or "Execute" button in the n8n interface.
 
-2. **The Data Source**
+2. **The Data Source:**
 
 - Node: Download files From Drive (Google Drive)
 - Function: It connects to Google Drive to download a specific file. This acts as the raw knowledge source for your AI.
 
-3. **The Storage Destination**
+3. **The Storage Destination:**
 
 - Node: <a href="https://www.pinecone.io/">**Pinecone Vector Store**</a> 
 - Function: This is the core "sink" where data ends up. Pinecone is a popular vector database used to store high-dimensional data (vectors) that represent the meaning of text.
