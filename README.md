@@ -139,7 +139,7 @@ And finally it looks like this at the end:
 <table>
   <tr>
     <td>
-      <img src="images/Full%20Workflow%20Of%20RAG%20Agent.png" width="600">
+      <img src="images/Full%20Workflow%20Of%20RAG%20Agent.png" width="800">
     </td>
   </tr>
 </table>
