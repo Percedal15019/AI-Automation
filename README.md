@@ -81,7 +81,7 @@ The following are the images of the Fully Understanding and Reliable RAG Agent w
 
 <table>
   <tr>
-    <td align="center">Upload</td>
+    <td align="center">Automated RAG Pipeline: Google Drive to Pinecone</td>
     <td align="center"><h4>Upload</h4></td>
   <tr>
     <td><img src="images/File%20Uploading%20to%20Pinecone%20via%20Drive.png" width="600" /></td>
