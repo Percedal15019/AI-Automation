@@ -136,4 +136,9 @@ And finally it looks like this at the end:
 
 <br>
 
-<table><tr><td><img src="images/Full%20Workflow%20Of%20RAG%20Agent.png" width="800"></td></tr></table>
+<table>
+  <tr>
+    <td align="center"><b>RAG-Enhanced AI Chatbot Workflow </b></td>
+    <td><img src="images/Full%20Workflow%20Of%20RAG%20Agent.png" width="800"></td>
+  </tr>
+</table>
