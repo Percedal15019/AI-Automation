@@ -74,9 +74,9 @@ How RAG works:
 
 - **Retrieval**: When a user asks a question, a retriever component searches an external knowledge base (like documents, databases, or the internet) for relevant information.
 - **Augmentation**: The retrieved information is then combined with the original user prompt, creating an "augmented" prompt.
-- **Generation**: This augmented prompt is passed to an LLM, which uses both the original context and the newly retrieved data to generate a comprehensive and factually grounded response. 
-  
-<!-- <img src="images/File%20Uploading%20to%20Pinecone%20via%20Drive.png images/Analyzing%20the%20File%20For%20Chatting.png" width="600">  -->
+- **Generation**: This augmented prompt is passed to an LLM, which uses both the original context and the newly retrieved data to generate a comprehensive and factually grounded response.
+ 
+<br>  
 
 <table>
   <tr>
@@ -85,7 +85,4 @@ How RAG works:
   </tr>
 </table>   
 
-
-
-<!-- <img src="images/Analyzing%20the%20File%20For%20Chatting.png" width="600"> -->
 <!-- <img src="images/Full%20Workflow%20Of%20RAG%20Agent.png" width="600"> -->
