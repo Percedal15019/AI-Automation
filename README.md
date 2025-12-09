@@ -77,6 +77,7 @@ How RAG works:
 - **Generation**: This augmented prompt is passed to an LLM, which uses both the original context and the newly retrieved data to generate a comprehensive and factually grounded response.
 
 The following are the images of the Fully Understanding and Reliable RAG Agent which will help you anytime:
+
 <br>  
 
 <table>
