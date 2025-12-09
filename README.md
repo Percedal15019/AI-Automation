@@ -109,23 +109,24 @@ From the First image, we have understand that:
 - Node: <a href="https://www.pinecone.io/">**Pinecone Vector Store**</a> 
 - Function: This is the core "sink" where data ends up. Pinecone is a popular vector database used to store high-dimensional data (vectors) that represent the meaning of text.
 
+<br>
 
 From the Second image, we have understand that:
 
-1. Trigger (When chat message received):
+1. **Trigger (When chat message received):**
    
 - The workflow initiates whenever a user sends a message.
 
-2. The Core Brain (AI Agent):
+2. **The Core Brain (AI Agent):**
 
 - This central node orchestrates the logic. Instead of just answering blindly, it uses connected "peripherals" (tools and memory) to formulate a smart response.
 
-3. Knowledge Base (Vector Store Tool):
+3. **Knowledge Base (Vector Store Tool):**
 
 - The agent is equipped with a tool to "look up" information.
 - It uses Pinecone, a popular vector database, to store and retrieve knowledge that the LLM wasn't trained on (e.g., your specific company data or documents).
   
-4. Memory (Window Buffer Memory):
+4. **Memory (Window Buffer Memory):**
    
 - The agent isn't amnesiac; it remembers the context of the current conversation (a "window" of recent messages), allowing for back-and-forth dialogue rather than just one-off Q&A.
 
