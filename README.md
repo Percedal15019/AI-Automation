@@ -80,8 +80,8 @@ How RAG works:
 
 <table>
   <tr>
-    <td><img src="images/File%20Uploading%20to%20Pinecone%20via%20Drive.png" width="400" /></td>
-    <td><img src="images/Analyzing%20the%20File%20For%20Chatting.png" width="400" /></td>
+    <td><img src="images/File%20Uploading%20to%20Pinecone%20via%20Drive.png" width="600" /></td>
+    <td><img src="images/Analyzing%20the%20File%20For%20Chatting.png" width="600" /></td>
   </tr>
 </table>   
 
