@@ -48,7 +48,7 @@ This is one of my first workflows that I created the reason of this is that i ca
 
 The below is the visual representation: 
 
-<img src="images/AI%20Chatbot.png" width="500">
+<table><tr><td><img src="images/AI%20Chatbot.png" width="500"></td></tr></table>
 
 You can chat with it seamlessly and you would just need to put the URL from the "When chat message is received" just double click it and you can easily deploy it in any HTML or python code.
 
@@ -92,7 +92,7 @@ The following are the images of the Fully Understanding and Reliable RAG Agent w
 
 <br>
 
-From the First image, we have understand that: 
+From the First Part, we have understand that: 
 
 1. **The Trigger (Start):**
 
@@ -111,7 +111,7 @@ From the First image, we have understand that:
 
 <br>
 
-From the Second image, we have understand that:
+From the Second Part, we have understand that:
 
 1. **Trigger (When chat message received):**
    
@@ -136,10 +136,4 @@ And finally it looks like this at the end:
 
 <br>
 
-<table>
-  <tr>
-    <td>
-      <img src="images/Full%20Workflow%20Of%20RAG%20Agent.png" width="800">
-    </td>
-  </tr>
-</table>
+<table><tr><td><img src="images/Full%20Workflow%20Of%20RAG%20Agent.png" width="800"></td></tr></table>
