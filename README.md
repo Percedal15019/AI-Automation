@@ -75,7 +75,8 @@ How RAG works:
 - **Retrieval**: When a user asks a question, a retriever component searches an external knowledge base (like documents, databases, or the internet) for relevant information.
 - **Augmentation**: The retrieved information is then combined with the original user prompt, creating an "augmented" prompt.
 - **Generation**: This augmented prompt is passed to an LLM, which uses both the original context and the newly retrieved data to generate a comprehensive and factually grounded response.
- 
+
+The following are the images of the Fully Understanding and Reliable RAG Agent which will help you anytime:
 <br>  
 
 <table>
@@ -84,5 +85,24 @@ How RAG works:
     <td><img src="images/Analyzing%20the%20File%20For%20Chatting.png" width="600" /></td>
   </tr>
 </table>   
+
+<br>
+
+From the First image, we have understand that: 
+
+1. The Trigger (Start)
+
+- Node: When clicking 'Execute workflow'
+- Function: This is a manual trigger. The process starts only when a user explicitly clicks the "Test" or "Execute" button in the n8n interface.
+
+2. The Data Source
+
+- Node: Download files From Drive (Google Drive)
+- Function: It connects to Google Drive to download a specific file. This acts as the raw knowledge source for your AI.
+
+3. The Storage Destination
+
+- Node: Pinecone Vector Store
+- Function: This is the core "sink" where data ends up. Pinecone is a popular vector database used to store high-dimensional data (vectors) that represent the meaning of text.
 
 <!-- <img src="images/Full%20Workflow%20Of%20RAG%20Agent.png" width="600"> -->
