@@ -130,4 +130,16 @@ From the Second image, we have understand that:
    
 - The agent isn't amnesiac; it remembers the context of the current conversation (a "window" of recent messages), allowing for back-and-forth dialogue rather than just one-off Q&A.
 
-<!-- <img src="images/Full%20Workflow%20Of%20RAG%20Agent.png" width="600"> -->
+<br>
+
+And finally it looks like this at the end: 
+
+<br>
+
+<table>
+  <tr>
+    <td>
+      <img src="images/Full%20Workflow%20Of%20RAG%20Agent.png" width="600">
+    </td>
+  </tr>
+</table>
