@@ -174,7 +174,7 @@ Download Link ⇉ [RAG Agent](https://github.com/Percedal15019/AI-Automation/blo
 I will add more workflows in the future as i am working on them. Here are some links which would help you in your AI Automation Journey as well: 
 
 - [Zie619 Workflows](https://github.com/Zie619/n8n-workflows)
-- [NateHerk](https://www.youtube.com/@nateherk)
+- [Nate Herk](https://www.youtube.com/@nateherk)
 - [Zero2Launch](https://github.com/Zero2Launch)
 - Also a huge help from the official <a href="https://n8n.io/">n8n</a> website as they have a great community and research papers regarding the topics.
 
