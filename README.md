@@ -171,7 +171,7 @@ Download Link ⇉ [RAG Agent](https://github.com/Percedal15019/AI-Automation/blo
 
 ## References
 
-I will add more workflows in the future as i am working on them. Here are some links which would you in your AI Automation journey as well: 
+I will add more workflows in the future as i am working on them. Here are some links which would help you in your AI Automation Journey as well: 
 
 - [Zie619 Workflows](https://github.com/Zie619/n8n-workflows)
 - [NateHerk](https://www.youtube.com/@nateherk)
