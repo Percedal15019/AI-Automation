@@ -168,5 +168,5 @@ I will add more workflows in the future as i am working on them. Here are some l
 - https://github.com/Zie619/n8n-workflows
 - https://www.youtube.com/@nateherk
 - https://www.youtube.com/@Zero2LaunchAI
-- Also a huge help from the official <a href="https://n8n.io/">n8n</a> website.
+- Also a huge help from the official <a href="https://n8n.io/">n8n</a> website as they have a great community and research papers regarding the topics.
 
