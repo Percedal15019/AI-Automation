@@ -54,6 +54,8 @@ You can chat with it seamlessly and you would just need to put the URL from the 
 
 It creates a small chat icon in the right bottom corner of your front page.
 
+Download Link ⇉ [Download file](https://github.com/Percedal15019/AI-Automation/blob/main/workflow/Chatbot.json)   
+
 <br>
 
 <h2>→ MCP Server</h2>
