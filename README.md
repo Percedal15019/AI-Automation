@@ -148,7 +148,7 @@ And finally it looks like this at the end:
 
 **🔴 NOTE:**
 
-1. From the first stage, we can see that I have used Google drive as my uploading tool, it requires you to have a client id and client secret which can be found in <a>**Google cloud**</a>
+1. From the first stage, we can see that I have used Google drive as my uploading tool, it requires you to have a client id and client secret which can be found in <a href="https://cloud.google.com/">**Google cloud**</a>
 
 2. You have to login in with the account you are currently in with n8n. And then go to Clients tab and fill the required details and get your client id and secret. (Here is the link for step-by-step setup ——> https://youtu.be/CdssoZAslq0?si=Kw9eWklcacxA4c-u )
 
