@@ -62,6 +62,15 @@ Download Link ⇉ [AI ChatBot](https://github.com/Percedal15019/AI-Automation/bl
 
 An **MCP server** is a program that acts as a backend for the Model Context Protocol (MCP), enabling AI agents to access external tools and data. It provides the AI with up-to-date information, such as business software, APIs, and knowledge bases, which helps make its responses more accurate and reduces "hallucinations".
 
+How MCP Server Works: 
+- **User Request**: A user asks the AI something requiring external info (e.g., "What's todays weather ?").
+- **Client Encodes Request**: The MCP client in the Host structures this into an MCP request.
+- **Server Identification**: The client/host determines which server (e.g., a financial API, weather API) has the capability.
+- **Tool Discovery**: The client asks the server what it can do, receiving a list of tools (e.g., run_query(sql_string)).
+- **Data Fetch**: The client sends a request to the server to use a tool (e.g., run a SQL query).
+- **Context & Response**: The server performs the action, gets data (e.g., revenue numbers, weather report), and sends it back as structured context to the client.
+- **LLM Generates Answer**: The Host's LLM uses this real-time data (not just its training) to generate an accurate response for the user. 
+
 <table><tr><td><img src="images/MCP%20Server.png" width="600"></td></tr></table>
 
 In the above workflow, i have actually used a firecrawl as my MCP server, the other alternatives are brave browser's MCP server. Every MCP server has there respected API key, so put it as per. 
