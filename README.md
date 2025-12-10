@@ -175,6 +175,6 @@ I will add more workflows in the future as i am working on them. Here are some l
 
 - [Zie619 Workflows](https://github.com/Zie619/n8n-workflows)
 - [NateHerk](https://www.youtube.com/@nateherk)
-- [Zero2Launch](https://www.youtube.com/@Zero2LaunchAI)
+- [Zero2Launch](https://github.com/Zero2Launch)
 - Also a huge help from the official <a href="https://n8n.io/">n8n</a> website as they have a great community and research papers regarding the topics.
 
