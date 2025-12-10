@@ -75,7 +75,7 @@ How MCP Server Works:
 
 <table><tr><td><img src="images/MCP%20Server.png" width="600"></td></tr></table>
 
-In the above workflow, i have actually used a firecrawl as my MCP server, the other alternatives are brave browser's MCP server. Every MCP server has there respected API key, so put it as per. 
+In the above workflow, i have actually used a [Firecrawl](https://www.firecrawl.dev/) as my MCP server, the other alternatives are brave browser's MCP server. Every MCP server has there respected API key, so put it as per. 
 
 Download Link ⇉ [MCP Server](https://github.com/Percedal15019/AI-Automation/blob/main/workflow/MCP-Server.json)   
 
