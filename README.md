@@ -148,7 +148,7 @@ And finally it looks like this at the end:
 
 **🔴 NOTE:**
 
-1. From the first stage, we can see that I have used Google drive as my uploading tool, it requires you to have a client id and client secret which can be found in <a href="https://cloud.google.com/">**Google cloud**</a>
+1. From the first stage, we can see that I have used Google drive as my uploading tool, it requires you to have a client id and client secret which can be found in <a href="https://cloud.google.com/">**Google cloud**</a>.
 
 2. You have to login in with the account you are currently in with n8n. And then go to Clients tab and fill the required details and get your client id and secret. (Here is the link for step-by-step setup ——> https://youtu.be/CdssoZAslq0?si=Kw9eWklcacxA4c-u )
 
@@ -156,6 +156,6 @@ And finally it looks like this at the end:
 
 4. Connect your pinecone account using its API Key and put the embedding model.
 
-5. If you have <a href=“https://openai.com"> OpenAI’s API Key </a>then use embedding small model in pinecone and same in n8n as well. I chose ollama because I don’t like openAI at all and its free plan is the worst. But <a href=“https://ollama.com"> Ollama </a>is GOATed because of it runs locally so I will recommend it (but if you have OpenAI’s API Key then use it.
+5. If you have <a href="https://openai.com">**OpenAI’s API Key**</a>then use embedding small model in pinecone and same in n8n as well. I chose ollama because I don’t like openAI at all and its free plan is the worst. But <a href="https://ollama.com">**Ollama**</a>is GOATed because of it runs locally so I will recommend it (but if you have OpenAI’s API Key then use it.
 
-6. Also I will recommend using <a href=“https://openrouter.ai"> OpenRouter </a>as with only one API Key you can access many different free AI models easily and no need to sign in for different AI models.
+6. Also I will recommend using <a href="https://openrouter.ai">**OpenRouter**</a>as with only one API Key you can access many different free AI models easily and no need to sign in for different AI models.
