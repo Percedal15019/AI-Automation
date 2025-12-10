@@ -54,7 +54,7 @@ You can chat with it seamlessly and you would just need to put the URL from the 
 
 It creates a small chat icon in the right bottom corner of your front page.
 
-Download Link ⇉ [Download file](https://github.com/Percedal15019/AI-Automation/blob/main/workflow/Chatbot.json)   
+Download Link ⇉ [AI ChatBot](https://github.com/Percedal15019/AI-Automation/blob/main/workflow/Chatbot.json)   
 
 <br>
 
@@ -65,6 +65,8 @@ An **MCP server** is a program that acts as a backend for the Model Context Prot
 <table><tr><td><img src="images/MCP%20Server.png" width="600"></td></tr></table>
 
 In the above workflow, i have actually used a firecrawl as my MCP server, the other alternatives are brave browser's MCP server. Every MCP server has there respected API key, so put it as per. 
+
+Download Link ⇉ [MCP Server](https://github.com/Percedal15019/AI-Automation/blob/main/workflow/MCP-Server.json)   
 
 <br>
 
@@ -145,6 +147,10 @@ And finally it looks like this at the end:
     <td><img src="images/Full%20Workflow%20Of%20RAG%20Agent.png" width="1000"></td>
   </tr>
 </table>
+
+<br>
+
+Download Link ⇉ [RAG Agent](https://github.com/Percedal15019/AI-Automation/blob/main/workflow/Talk%20with%20your%20Drive%20folder%20RAG.json)   
 
 <br>
 
