@@ -87,8 +87,23 @@ A Web Search Engine is a software system that helps users find information on th
 
 Web search using Large Language Models (LLMs) is an advanced approach where AI systems leverage their natural language understanding capabilities to interpret user intent, retrieve information from the web (often in real-time), and synthesize a direct, conversational answer, rather than simply providing a list of links. 
 
-<table><tr><td><img src="images/Web%20Search%20Using%20Perplexity.png" width="600"></td></tr></table>
+How Web Search Works: 
 
+- A “When chat message received” trigger starts the workflow whenever a user sends a message into your chat interface.​
+
+- The message is passed to an AI Agent node, which is configured with an [OpenRouter Chat Model](https://openrouter.ai) as its main LLM, a Simple Memory store for conversation context, and a [Perplexity Web Search tool](https://www.perplexity.ai) for real‑time information from the internet.​
+
+- The AI Agent can respond purely from the model, use stored memory, or call the Perplexity tool when it needs fresh web results before replying as per its requirements.
+
+<br>
+
+<table>
+  <tr>
+    <td align="center"><b>Web‑Aware AI ChatBot</b></td>
+    <tr>
+    <td><img src="images/Web%20Search%20Using%20Perplexity.png" width="800"></td>
+  </tr>
+</table>
 
 
 
