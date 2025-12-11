@@ -83,6 +83,25 @@ Download Link ⇉ [MCP Server](https://github.com/Percedal15019/AI-Automation/bl
 
 <h2>→ Web Search</h2>
 
+
+
+
+<table><tr><td><img src="images/Web%20Search%20Using%20Perplexity.png" width="500"></td></tr></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <h2>→ RAG Agent</h2>
 
 RAG, or Retrieval-Augmented Generation, is an AI technique that enhances large language models (LLMs) by first retrieving relevant information from external sources and then using that information to generate a more accurate and up-to-date response. It combines the strengths of a retrieval system (to find data) and a generative model (to create text).
