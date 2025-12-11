@@ -105,18 +105,9 @@ How Web Search Works:
   </tr>
 </table>
 
+It is basic and simple without any requirements of http request node which makes things complicated (for me you are free to try as all) easy to deploy.
 
-
-
-
-
-
-
-
-
-
-
-
+Download Link ⇉ [Web Search](https://github.com/Percedal15019/AI-Automation/blob/main/images/Web%20Search%20Using%20Perplexity.png)
 
 <h2>→ RAG Agent</h2>
 
