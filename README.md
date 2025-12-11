@@ -85,7 +85,7 @@ Download Link ⇉ [MCP Server](https://github.com/Percedal15019/AI-Automation/bl
 
 <h2>→ Web Search</h2>
 
-A Web Search Engine is a software system that helps users find information on the World Wide Web by indexing content and returning a list of relevant results for a user's query. It works by using automated programs called crawlers or spiders to discover and index web pages, then using algorithms to rank the pages based on relevance, quality, and other factors to present the most useful results to the user. Examples of popular search engines include Google, Bing, and Yahoo.
+A **Web Search Engine** is a software system that helps users find information on the World Wide Web by indexing content and returning a list of relevant results for a user's query. It works by using automated programs called crawlers or spiders to discover and index web pages, then using algorithms to rank the pages based on relevance, quality, and other factors to present the most useful results to the user. Examples of popular search engines include Google, Bing, and Yahoo.
 
 Web search using Large Language Models (LLMs) is an advanced approach where AI systems leverage their natural language understanding capabilities to interpret user intent, retrieve information from the web (often in real-time), and synthesize a direct, conversational answer, rather than simply providing a list of links. 
 
@@ -113,9 +113,11 @@ It is basic and simple without any requirements of http request node which makes
 
 Download Link ⇉ [Web Search](https://github.com/Percedal15019/AI-Automation/blob/main/workflow/Web%20Search%20Using%20Perplexity.json)
 
+<br>
+
 <h2>→ RAG Agent</h2>
 
-RAG, or Retrieval-Augmented Generation, is an AI technique that enhances large language models (LLMs) by first retrieving relevant information from external sources and then using that information to generate a more accurate and up-to-date response. It combines the strengths of a retrieval system (to find data) and a generative model (to create text).
+**RAG, or Retrieval-Augmented Generation**, is an AI technique that enhances large language models (LLMs) by first retrieving relevant information from external sources and then using that information to generate a more accurate and up-to-date response. It combines the strengths of a retrieval system (to find data) and a generative model (to create text).
 
 How RAG works:
 
@@ -199,7 +201,7 @@ Download Link ⇉ [RAG Agent](https://github.com/Percedal15019/AI-Automation/blo
 
 **🔴 NOTE:**
 
-1. From the first stage, we can see that I have used Google drive as my uploading tool, it requires you to have a client id and client secret which can be found in <a href="https://cloud.google.com/">**Google cloud**</a>.
+1. In the first stage, we can see that I have used Google drive as my uploading tool, it requires you to have a client id and client secret which can be found in <a href="https://cloud.google.com/">**Google cloud**</a>.
 
 2. You have to login in with the account you are currently in with n8n. And then go to Clients tab and fill the required details and get your client id and secret. (Here is the link for step-by-step setup ——> https://www.youtube.com/watch?v=CdssoZAslq0 )
 
