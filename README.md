@@ -75,6 +75,8 @@ How MCP Server Works:
 
 <table><tr><td><img src="images/MCP%20Server.png" width="700"></td></tr></table>
 
+<br>
+
 In the above workflow, i have actually used a [Firecrawl](https://www.firecrawl.dev/) as my MCP server, the other alternatives are [Brave Search API](https://brave.com/search/api/) which works the same. Every MCP server has there respected API key, so put it as per. 
 
 Download Link ⇉ [MCP Server](https://github.com/Percedal15019/AI-Automation/blob/main/workflow/MCP-Server.json)   
@@ -104,6 +106,8 @@ How Web Search Works:
     <td><img src="images/Web%20Search%20Using%20Perplexity.png" width="800"></td>
   </tr>
 </table>
+
+<br>
 
 It is basic and simple without any requirements of http request node which makes things complicated (for me you are free to try as all) easy to deploy.
 
