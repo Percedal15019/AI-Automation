@@ -1,0 +1,264 @@
+{
+  "name": "Web Search",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        0,
+        0
+      ],
+      "id": "68cbfb78-fd76-403a-b6b9-99d31f8b75b2",
+      "name": "When chat message received",
+      "webhookId": "7d8244bc-2a61-4350-a3d6-192ed0bf1efc"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "When you are asked about the weather, use the 'Respond and Go' to send a quick message that you are going to respond.\n\nDuring your run, if you need to ask a clarifying question, use the 'Respond and Wait' tool to ask the question, wait for the response, then keep progressing with your run.\n\nUse the 'Get Data' tool to call to return the user's information.\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        352,
+        0
+      ],
+      "id": "df061ff4-e4b1-42d9-9aaa-63a30089a5fc",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        352,
+        256
+      ],
+      "id": "d6289bc7-9615-4dd0-88d0-4740a2b41873",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "dataTableId": {
+          "__rl": true,
+          "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Data_table', ``, 'string') }}",
+          "mode": "id"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.dataTableTool",
+      "typeVersion": 1,
+      "position": [
+        1200,
+        480
+      ],
+      "id": "afe4e977-9c79-479c-8f3c-e19d69fc28be",
+      "name": "Insert row in Data table"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Send a message to a chat and do not wait for response. just keep going.",
+        "message": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message', ``, 'string') }}",
+        "waitUserReply": false
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTool",
+      "typeVersion": 1,
+      "position": [
+        1184,
+        368
+      ],
+      "id": "76c925c0-cbcd-4727-9349-8be42d2238ae",
+      "name": "Respond to Go"
+    },
+    {
+      "parameters": {
+        "toolDescription": "If you have any doubts wait and ask the user about it.",
+        "message": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message', ``, 'string') }}",
+        "waitUserReply": false
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTool",
+      "typeVersion": 1,
+      "position": [
+        1168,
+        224
+      ],
+      "id": "b295f3ca-677b-46d9-9035-ccf8fd36f7f1",
+      "name": "Respond to Wait",
+      "notesInFlow": false
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-5-search-api",
+          "mode": "list",
+          "cachedResultName": "gpt-5-search-api"
+        },
+        "builtInTools": {
+          "webSearch": {
+            "searchContextSize": "medium"
+          }
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        1168,
+        80
+      ],
+      "id": "f634cd14-5466-46a8-aa99-fd61151df8c0",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "CzYj4siQiHMFJvUE",
+          "name": "OpenAi account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "openai/gpt-oss-20b",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        176,
+        192
+      ],
+      "id": "e24d50c6-e673-44ed-ad19-f6656699accf",
+      "name": "OpenRouter Chat Model",
+      "credentials": {
+        "openRouterApi": {
+          "id": "hqwLI4gUvlRDGZ4s",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "messages": {
+          "message": [
+            {
+              "content": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('message0_Text', ``, 'string') }}"
+            }
+          ]
+        },
+        "options": {
+          "searchRecency": "hour"
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.perplexityTool",
+      "typeVersion": 1,
+      "position": [
+        608,
+        256
+      ],
+      "id": "9d99d505-6dce-44c4-80a7-f6480942c644",
+      "name": "Perplexity Web Search",
+      "credentials": {
+        "perplexityApi": {
+          "id": "CYA401ihmErlcVwG",
+          "name": "Perplexity account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Insert row in Data table": {
+      "ai_tool": [
+        []
+      ]
+    },
+    "Respond to Go": {
+      "ai_tool": [
+        []
+      ]
+    },
+    "Respond to Wait": {
+      "ai_tool": [
+        []
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        []
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        []
+      ]
+    },
+    "OpenRouter Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Perplexity Web Search": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "5bdd62cf-6233-41bd-842d-3c489597d815",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "dca6f58ddc2bc042b2a0b87df68cc95840e7acfd95b687d59e2ddc6d1e244ed1"
+  },
+  "id": "vRZYUgE66SeKKV8b",
+  "tags": []
+}
