@@ -73,7 +73,7 @@ How MCP Server Works:
 
 <br>
 
-<table><tr><td><img src="images/MCP%20Server.png" width="600"></td></tr></table>
+<table><tr><td><img src="images/MCP%20Server.png" width="800"></td></tr></table>
 
 In the above workflow, i have actually used a [Firecrawl](https://www.firecrawl.dev/) as my MCP server, the other alternatives are [Brave Search API](https://brave.com/search/api/) which works the same. Every MCP server has there respected API key, so put it as per. 
 
