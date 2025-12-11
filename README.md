@@ -83,10 +83,11 @@ Download Link ⇉ [MCP Server](https://github.com/Percedal15019/AI-Automation/bl
 
 <h2>→ Web Search</h2>
 
+A Web Search Engine is a software system that helps users find information on the World Wide Web by indexing content and returning a list of relevant results for a user's query. It works by using automated programs called crawlers or spiders to discover and index web pages, then using algorithms to rank the pages based on relevance, quality, and other factors to present the most useful results to the user. Examples of popular search engines include Google, Bing, and Yahoo.
 
+Web search using Large Language Models (LLMs) is an advanced approach where AI systems leverage their natural language understanding capabilities to interpret user intent, retrieve information from the web (often in real-time), and synthesize a direct, conversational answer, rather than simply providing a list of links. 
 
-
-<table><tr><td><img src="images/Web%20Search%20Using%20Perplexity.png" width="500"></td></tr></table>
+<table><tr><td><img src="images/Web%20Search%20Using%20Perplexity.png" width="600"></td></tr></table>
 
 
 
