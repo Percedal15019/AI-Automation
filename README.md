@@ -224,3 +224,7 @@ I will add more workflows in the future as i am working on them. Here are some l
 - [Zero2Launch](https://github.com/Zero2Launch)
 - Also a huge help from the official <a href="https://n8n.io/">n8n</a> website as they have a great community and research papers regarding the topics.
 
+
+## License
+
+This Project is licensed under [MIT License](https://github.com/Percedal15019/AI-Automation/blob/main/LICENSE)
