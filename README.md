@@ -209,7 +209,7 @@ Download Link ⇉ [RAG Agent](https://github.com/Percedal15019/AI-Automation/blo
 
 4. Connect your pinecone account using its API Key and put the embedding model.
 
-5. If you have <a href="https://openai.com">**OpenAI’s API Key**</a> then use embedding small model in pinecone and same in n8n as well. I chose ollama because I don’t like openAI at all and its free plan is the worst. But <a href="https://ollama.com">**Ollama**</a> is GOATed because of it runs locally so I will recommend it (but if you have OpenAI’s API Key then use it.
+5. If you have <a href="https://openai.com">**OpenAI’s API Key**</a> then use embedding small model in pinecone and same in n8n as well. I chose ollama because I don’t like openAI at all and its free plan is the worst. But <a href="https://ollama.com">**Ollama**</a> is GOATed because of it runs locally so I will recommend it (but if you have OpenAI’s API Key then use it.)
 
 6. Also I will recommend using <a href="https://openrouter.ai">**OpenRouter**</a> as with only one API Key you can access many different free AI models easily and no need to sign in for different AI models.
 
