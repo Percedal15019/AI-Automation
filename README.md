@@ -278,9 +278,27 @@ The following are the image of the Fully Understanding and Reliable Audio Transc
 
 How it works:
 
-- 
+1. Uploading Audio to AssemblyAI
 
+- **On form Submission**: The process starts when a user uploads a file via this trigger. It likely accepts an audio file from a frontend form.
 
+- **HTTP Request (Upload)**: The workflow sends the uploaded audio file to AssemblyAI, a service specializing in Speech-to-Text (transcription).
+
+- **HTTP Request (Transcript)**: This initiates the transcription job and returns a "job_id" that is needed to track progress.
+
+2. The Polling Loop
+
+*Transcribing audio takes time, so the workflow cannot proceed immediately. It uses a "polling" mechanism to check for completion.*
+
+- **Wait**: The workflow pauses for a set time (e.g., 5-10 seconds) to give the server time to process.
+
+- **HTTP Request (Get Status)**: It uses the job_id from Step 1 to ask AssemblyAI: "Is the transcription done yet?"
+
+- **If Node**: This checks the status.
+
+--**False (Not done)**: It loops back to the "Wait" node to try again later.
+
+--**True (Completed)**: It breaks the loop and moves to the next step, carrying the finished text transcript.
 
 
 
