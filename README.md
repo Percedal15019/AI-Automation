@@ -316,12 +316,19 @@ How it works:
 
 - **Append row in sheet**: Finally, it logs the details (likely the filename, transcription status, or ID) into a spreadsheet (like Google Sheets) for record-keeping.
 
+<br>
 
+4. **The AI ChatBot**
 
+- **When chat message received**: The trigger for the chat interface.
 
+- **AI Agent**: This is the "brain" that manages the conversation. It has access to three key components:
 
+     - **OpenRouter Chat Model**: The Large Language Model (LLM) that generates the actual human-like answers.
 
+     - **Simple Memory**: Allows the bot to remember previous messages in the current conversation. Also Postgres is recommended while using this workflow.
 
+     - **Pinecone Vector Store (Tool)**: This allows the agent to "look up" information. When you ask a question, the agent searches the Pinecone database (created in Step 3) for the specific parts of the audio transcript that are relevant to your question, using the Ollama embeddings model to match meanings.
 
 <br>
 
