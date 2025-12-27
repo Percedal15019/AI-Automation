@@ -133,12 +133,18 @@ Download Link ⇉ [Web Search](https://github.com/Percedal15019/AI-Automation/bl
 
 [**Supabase**](https://supabase.com/) is an open-source backend-as-a-service (BaaS) platform built around a core [PostgreSQL database](https://www.postgresql.org/). Supabase is a platform that provides a managed PostgreSQL database along with additional features needed to build a modern application backend quickly, functioning as an alternative to services like Google's Firebase. On top of that database, Supabase bundles additional backend capabilities like authentication, instant APIs, realtime subscriptions, edge/serverless functions, and file storage.
 
-[**PostgreSQL (Postgres)**](https://www.postgresql.org/)
+[**PostgreSQL (Postgres)**](https://www.postgresql.org/) is a powerful, open-source, object-relational database management system (RDBMS) renowned for its reliability, feature robustness, and performance. It is a mature, battle-tested database engine that provides a structured, relational data model, full SQL query capabilities, and strong ACID (Atomicity, Consistency, Isolation, Durability) compliance. It supports rich data types (including JSON), complex queries, and an extensive ecosystem of extensions (like PostGIS for geospatial data or pgvector for AI applications). 
+
+PostgreSQL is the database engine itself, while Supabase is a full development platform built on top of that engine.
 
 
-
-
-
+<table>
+  <tr>
+    <td align="center"><b></b></td>
+    <tr>
+    <td><img src="images/" width="800"></td>
+  </tr>
+</table>
 
 
 
