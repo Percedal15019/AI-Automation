@@ -44,7 +44,7 @@ Now i am going to show some of my workflows to you which i am working on.
 
 | **INDEX** |
 | ------------- |
-| ¤৹ [AI ChatBot](#-ai-chatbot) |
+| ৹ [AI ChatBot](#-ai-chatbot) |
 | ৹ [MCP Server](#-mcp-server) |
 | ৹ [Web Search](#-web-search) |
 | ৹ [SupaBase & Postgres](#-supabase--postgres) |
