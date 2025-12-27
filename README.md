@@ -140,9 +140,8 @@ PostgreSQL is the database engine itself, while Supabase is a full development p
 
 <table>
     <tr>
-    <td>
-      <img src="images/Uploading%20Documents%20to%20SupaBase%20Vector%20Store.png" width="600">
-    </td>
+    <td><img src="images/Uploading%20Documents%20to%20SupaBase%20Vector%20Store.png" width="600"></td>
+    <td><img src="images/ChatBot%20with%20Postgres%20Chat%20Memory.png" width="600"></td>
   </tr>
 </table>
 
