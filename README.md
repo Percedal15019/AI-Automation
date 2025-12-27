@@ -40,7 +40,7 @@ Now i am going to show some of my workflows to you which i am working on.
 
 ## 🏃‍♂️‍➡️ Workflows 
 
-| **INDEX:** |
+| **INDEX** |
 | ------------- |
 | [AI ChatBot](#-ai-chatbot) |
 | [MCP Server](#-mcp-server) |
