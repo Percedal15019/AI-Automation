@@ -45,9 +45,9 @@ Now i am going to show some of my workflows to you which i am working on.
 - [AI ChatBot](#-ai-chatbot)
 - [MCP Server](#-mcp-server)
 - [Web Search](#-web-search)
-- [SupaBase & Postgres](#-supabase-&-postgres)
+- [SupaBase & Postgres](#-supabase--postgres)
 - [RAG Agent](#-rag-agent)
-- [Audio Transcription & Chat Bot](#-audio-transcription-&-chat-bot)
+- [Audio Transcription & Chat Bot](#-audio-transcription--chat-bot)
 - [Multi Agent Model](#-multi-agent-model)
 
 <br>
