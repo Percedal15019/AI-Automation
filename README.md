@@ -258,9 +258,69 @@ Download Link ⇉ [RAG Agent](https://github.com/Percedal15019/AI-Automation/blo
 
 <h2>→ Audio Transcription & Chat Bot</h2>
 
+It transform audio files into searchable, interactive knowledge with automated transcription and speaker labeling from [AssemblyAI](https://www.assemblyai.com/). 
+
+It is designed for scenarios where users upload audio files, which are transcribed and summarized automatically, then stored as embeddings in Pinecone for later retrieval. A chatbot uses this indexed data to provide context-aware answers based on previous audio content.
+
+Also, this workflow enables an end-to-end audio transcription and conversational AI chatbot system, leveraging AssemblyAI for transcription and summarization, [Ollama](https://ollama.com) for embeddings and [OpenRouter](https://openrouter.ai) for chat, and [Pinecone](https://www.pinecone.io) as a vector database storage.
+
+The following are the image of the Fully Understanding and Reliable Audio Transcriping Chat Agent which will help you anytime:
+
+<table>
+  <tr>
+    <td>
+      <img src="images/Audio%20Transcription%20%26%20ChatBot.png" width="400">
+    </td>
+  </tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <br>
 
 <h2>→ Multi Agent Model</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <br>
 
