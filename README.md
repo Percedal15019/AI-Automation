@@ -278,7 +278,7 @@ The following are the image of the Fully Understanding and Reliable Audio Transc
 
 How it works:
 
-1. Uploading Audio to AssemblyAI
+1. **Uploading Audio to AssemblyAI**
 
 - **On form Submission**: The process starts when a user uploads a file via this trigger. It likely accepts an audio file from a frontend form.
 
@@ -286,7 +286,9 @@ How it works:
 
 - **HTTP Request (Transcript)**: This initiates the transcription job and returns a "job_id" that is needed to track progress.
 
-2. The Polling Loop
+<br>
+
+2. **The Polling Loop**
 
 *Transcribing audio takes time, so the workflow cannot proceed immediately. It uses a "polling" mechanism to check for completion.*
 
@@ -300,9 +302,19 @@ How it works:
 
     - **True (Completed)**: It breaks the loop and moves to the next step, carrying the finished text transcript.
 
+<br>
 
+3. **Vectorization & Logging**
 
+- **Convert to File**: Converts the raw text transcript into a file format n8n can process.
 
+- **Pinecone Vector Store**: This is the core database. It doesn't just store text; it stores "vectors" (mathematical representations of meaning).
+
+    - **Ollama Embeddings**: It uses Ollama (a tool for running local AI models) to convert the text into these vectors.
+
+    - **Recursive Character Text Splitter**: It chops the long transcript into smaller, manageable chunks so the AI doesn't get overwhelmed.
+
+- **Append row in sheet**: Finally, it logs the details (likely the filename, transcription status, or ID) into a spreadsheet (like Google Sheets) for record-keeping.
 
 
 
