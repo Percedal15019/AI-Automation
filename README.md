@@ -64,6 +64,8 @@ The below is the visual representation:
 
 <table><tr><td><img src="images/AI%20Chatbot.png" width="500"></td></tr></table>
 
+<br>
+
 You can chat with it seamlessly and you would just need to put the URL from the "When chat message is received" just double click it and you can easily deploy it in any HTML or python code.
 
 It creates a small chat icon in the right bottom corner of your front page.
