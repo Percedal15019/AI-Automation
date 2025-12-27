@@ -332,6 +332,19 @@ How it works:
 
 <br>
 
+Summary of Technologies Used
+
+- **AssemblyAI**: For converting Audio to Text.
+
+- **Pinecone**: A Vector Database for storing and searching the text context.
+
+- **Ollama**: Likely running a local model (like Llama3 or Mistral) to generate embeddings (numerical data for the text).
+
+- **OpenRouter**: Provides access to powerful LLMs (like GPT-4 or Claude) to power the chat response.
+
+
+
+
 <h2>→ Multi Agent Model</h2>
 
 
