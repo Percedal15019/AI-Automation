@@ -49,7 +49,7 @@ Now i am going to show some of my workflows to you which i am working on.
 | ৹ [Web Search](#-web-search) |
 | ৹ [SupaBase & Postgres](#-supabase--postgres) |
 | ৹ [RAG Agent](#-rag-agent) | 
-| ৹ [Audio Transcription & Chat Bot](#-audio-transcription--chatbot) |
+| ৹ [Audio Transcription & ChatBot](#-audio-transcription--chatbot) |
 | ৹ [Multi Agent Model](#-multi-agent-model) |
 
 <br>
