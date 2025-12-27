@@ -1,0 +1,843 @@
+{
+  "name": "Multi Agent 2",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        272,
+        -112
+      ],
+      "id": "043de5ea-1f8f-40cd-8eb8-127283b507d4",
+      "name": "When chat message received",
+      "webhookId": "e3d2daee-1cc9-43e8-8436-bac6c648a8b0"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "You are a Multi-Agent Coordinator responsible for managing specialized sub-agents to answer user questions comprehensively.\n\nAVAILABLE SUB-AGENTS:\n1. RAG Agent - Searches and analyzes documents (Berkshire Hathaway letters, BDSG law, NIST guidelines). Can also generate document summaries.\n2. Gmail Agent - Handles email communications (sends messages, reads inbox, creates drafts, manages multiple messages). If the user asks you to send the summary by email, always call the email sub-agent.\n3. News HTTP Request Tool - Fetches recent news and current information from web sources. This tool should ONLY be called when the user explicitly requests updates; do not call it if the user needs the information available in the documents.\n\nYOUR ROLE:\n- Analyze user requests to determine which sub-agent(s) are needed\n- Route questions to appropriate specialists\n- Coordinate between multiple agents when needed\n- Synthesize responses from sub-agents into coherent answers\n- Maintain conversation context and follow up appropriately\n\nDECISION LOGIC:\n- Document-related questions → RAG Document Agent\n- Email requests or communication needs → Email Agent  \n- Current events, recent data, news → News HTTP Request Tool\n- Complex questions may require multiple agents\n\nIf the user asks you to send the summary via email, always call the email sub-agent."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        448,
+        -112
+      ],
+      "id": "8641e1ef-12aa-4a7a-ae9e-f67c44048298",
+      "name": "QNA"
+    },
+    {
+      "parameters": {
+        "model": "openai/gpt-oss-20b",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        288,
+        160
+      ],
+      "id": "21077297-79d2-4440-9302-f0113e5c21c4",
+      "name": "Communicate",
+      "credentials": {
+        "openRouterApi": {
+          "id": "hqwLI4gUvlRDGZ4s",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        432,
+        160
+      ],
+      "id": "9541aac9-d5ad-46a6-9b15-fd7496711039",
+      "name": "Storage"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Use this sub-agent for the following tasks:\n- search the document knowledge base and retrieve specific information, facts, quotes, or details that are stored in the uploaded documents\n- prepare a summary of the provided document(s) (from a vector database)",
+        "text": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Prompt__User_Message_', ``, 'string') }}",
+        "options": {
+          "systemMessage": "You are a helpful AI assistant with access to a document knowledge base. Your primary role is to answer user questions based strictly on the information found in the documents.\n\nCRITICAL: You MUST use the document search tool for ANY question that could be answered from documents, even if you think you know the answer from your training data.\n\nGuidelines:\n- ALWAYS search the document knowledge base first before answering questions\n- Even if a question seems general, check the documents first - they may contain specific information\n- Base your answers ONLY on information retrieved from the documents\n- If the documents contain relevant information, use it and ALWAYS CITE the source with a link\n- If you cannot find the answer in the documents after searching, clearly state: \"I searched the available documents but could not find this specific information\"\n- NEVER answer factual questions from your general knowledge if they could relate to document content\n- If the user&apos;s question is unclear, ask for clarification\n- When providing factual information (dates, numbers, names, specific facts), include a SHORT direct quote from the document to verify accuracy\n- Format quotes like this: \"According to the document: &apos;[exact quote]&apos;\"\n- Keep quotes concise - just enough to verify the specific fact\n\nBe accurate, concise, and honest about the limitations of the available information.\n\nAlways include brief quotes for factual claims.\n\nRemember: Your purpose is to help users find information IN THE DOCUMENTS, not to provide general knowledge. Always search first. The documents may contain specific information that differs from general knowledge.\n\nIMPORTANT for broad questions:\n- Questions like \"Do any documents mention X?\" or \"Which documents discuss Y?\" require checking ALL relevant documents\n- Review search results carefully - multiple documents may contain relevant information\n- If you find information in one document, check if others also mention the topic\n- Acknowledge ALL documents that contain relevant information, not just the first one you find\n\nThe knowledge base contains business correspondence, legal documents, and technical guides. Use the search tool to find relevant information from these sources.\n\nWhen answering:\n- Provide direct answers first\n- Reference the source document (e.g., \"According to the NIST guidelines...\")\n- Use bullet points for multiple pieces of information\n- ALWAYS CITE the source in the following format: Source: ...\n\nIf the user asks about the news, call the HTTP Requst tool.\n\nIf user asks to summarize a document or information relevant to the document:\n  → Call Sub-Workflow tool\n  → Return summary\n\nIf you are asked for a summary, please provide only the summary you receive from the workflow tool. Send the user exactly the summary you receive from the workflow tool under the heading \"Summary.\" Do not analyze or modify it; send it back to the user.\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agentTool",
+      "typeVersion": 2.2,
+      "position": [
+        400,
+        528
+      ],
+      "id": "0755e820-826f-49f5-b93f-eff16709c821",
+      "name": "RAG AI Agent"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Use this email sub-agent for the following tasks:\n- send an email\n- draft an email\n- get multiple emails (brief overview with optional search)\n- get a content of a single email",
+        "text": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Prompt__User_Message_', ``, 'string') }}",
+        "options": {
+          "systemMessage": "You are a Gmail AI sub-agent. You will receive tasks from the top-level agent.\nIMPORTANT: When doing Email search and not getting results, try a different combination of search parameters."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agentTool",
+      "typeVersion": 2.2,
+      "position": [
+        1344,
+        -80
+      ],
+      "id": "b88a1e8d-d59d-42d4-be66-a6124ef0c6da",
+      "name": "Gmail Agent"
+    },
+    {
+      "parameters": {
+        "mode": "retrieve-as-tool",
+        "toolDescription": "This tool searches the document knowledge base. Use it to retrieve specific information, facts, quotes, or details that are stored in the uploaded documents. This tool retrieves relevant content when answering questions that require specific facts or details from uploaded documents. The information is retrieved based on semantic similarity to your query.",
+        "pineconeIndex": {
+          "__rl": true,
+          "value": "newone",
+          "mode": "list",
+          "cachedResultName": "newone"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "typeVersion": 1.3,
+      "position": [
+        400,
+        704
+      ],
+      "id": "8405dedc-0d58-47a0-8776-509bfe6c7628",
+      "name": "Knowledge Base",
+      "credentials": {
+        "pineconeApi": {
+          "id": "UcU8RRkm5pzqgZuT",
+          "name": "PineconeApi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "nomic-embed-text:latest"
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOllama",
+      "typeVersion": 1,
+      "position": [
+        320,
+        864
+      ],
+      "id": "22d3476b-997c-48ab-9cee-2f1d3649e7c4",
+      "name": "Embeddings Ollama",
+      "credentials": {
+        "ollamaApi": {
+          "id": "NUyRner38pl1K7JL",
+          "name": "Ollama account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "openai/gpt-oss-20b",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        1216,
+        96
+      ],
+      "id": "8ce2abd9-c7c4-4582-8d2d-ef4a2406767d",
+      "name": "Generate Gmail Response",
+      "credentials": {
+        "openRouterApi": {
+          "id": "hqwLI4gUvlRDGZ4s",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "openai/gpt-oss-20b",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        272,
+        688
+      ],
+      "id": "78c6376b-daac-49c4-be55-4f35fae2bd7e",
+      "name": "Generate RAG Response",
+      "credentials": {
+        "openRouterApi": {
+          "id": "hqwLI4gUvlRDGZ4s",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('To', ``, 'string') }}",
+        "subject": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Subject', ``, 'string') }}",
+        "message": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message', ``, 'string') }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        1840,
+        -16
+      ],
+      "id": "e605dd7a-dabb-484f-ac80-d95cfc5762eb",
+      "name": "Send a message in Gmail",
+      "webhookId": "f627f102-922e-4e0a-956c-42cf3d6b0f2b",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "CesPUS473BJkUQev",
+          "name": "CollegeDmce"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "messageId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message_ID', ``, 'string') }}",
+        "simple": false,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        1568,
+        192
+      ],
+      "id": "c4926872-fc5e-4475-9213-73d1fe9f3a6a",
+      "name": "Get a message in Gmail",
+      "webhookId": "254ba885-caa4-4052-8324-a8b870a81ba7",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "CesPUS473BJkUQev",
+          "name": "CollegeDmce"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "draft",
+        "subject": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Subject', ``, 'string') }}",
+        "emailType": "html",
+        "message": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message', ``, 'string') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        1744,
+        144
+      ],
+      "id": "f1c2218b-9ae6-4d12-9eb6-2b0361728edc",
+      "name": "Create a draft in Gmail",
+      "webhookId": "baf5fb59-c1ea-4a73-8690-6bdfed8b53d2",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "CesPUS473BJkUQev",
+          "name": "CollegeDmce"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "limit": 20,
+        "filters": {}
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        1376,
+        192
+      ],
+      "id": "4a2b0c0c-07de-4648-b24b-287a2f130eb0",
+      "name": "Get many messages in Gmail",
+      "webhookId": "88394ea7-de21-41f4-9b34-22e4fe0a2c76",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "CesPUS473BJkUQev",
+          "name": "CollegeDmce"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "Use HTTP for news OR ANY RECENT CASES on user query.",
+        "url": "https://newsapi.org/v2/everything",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "q",
+              "value": "news all around the world"
+            },
+            {
+              "name": "sortBy",
+              "value": "publishedAt"
+            },
+            {
+              "name": "apiKey",
+              "value": "4b16268d7cc1449bb4a0edee979ef4df"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.3,
+      "position": [
+        944,
+        288
+      ],
+      "id": "b308f6a5-cc9c-4d37-8068-5d939b93e008",
+      "name": "HTTP Request",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "psUhrbd9z11P7k3H",
+          "name": "Perplexity Auth"
+        },
+        "httpQueryAuth": {
+          "id": "ObbmqUXvBGCQchLJ",
+          "name": "Query Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "I3Rf2sEN5VQ1FO42",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/I3Rf2sEN5VQ1FO42",
+          "cachedResultName": "sub agent 2"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "chatInput": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('chatInput', ``, 'string') }}",
+            "file_id": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('file_id', ``, 'string') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "chatInput",
+              "displayName": "chatInput",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "file_id",
+              "displayName": "file_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        704,
+        704
+      ],
+      "id": "54c80f41-5c44-4066-8c17-1c94cba0414b",
+      "name": "Call 'sub agent 2'"
+    },
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "chatInput"
+            },
+            {
+              "name": "file_id"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        1008,
+        640
+      ],
+      "id": "4ede91f6-4144-457f-acbf-95ff3b6f2451",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "1n6x5KxDrvlJpip-R6n94cDnINB-etyN2",
+          "mode": "list",
+          "cachedResultName": "Experiment No 1.pdf",
+          "cachedResultUrl": "https://drive.google.com/file/d/1n6x5KxDrvlJpip-R6n94cDnINB-etyN2/view?usp=drivesdk"
+        },
+        "options": {
+          "googleFileConversion": {
+            "conversion": {}
+          }
+        }
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1168,
+        640
+      ],
+      "id": "41cbcf5a-c6af-4733-8238-d57c4be8bb9c",
+      "name": "Get Document",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "xmiDlIgh6cKDElJj",
+          "name": "Google Drive account _2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "text",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1.1,
+      "position": [
+        1328,
+        640
+      ],
+      "id": "34fef7bb-6b6a-46da-88f0-a36b689ff617",
+      "name": "Extract from File"
+    },
+    {
+      "parameters": {
+        "html": "={{ $json.data }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.markdown",
+      "typeVersion": 1,
+      "position": [
+        1488,
+        640
+      ],
+      "id": "82493438-92ce-4801-9a00-5ab7601b0223",
+      "name": "Markdown"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.data }}",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "You are an expert summarizer. Summarize the provided document(s) (from a vector database), focusing on key points relevant to the user&apos;s query. "
+            }
+          ]
+        },
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        1648,
+        640
+      ],
+      "id": "1c85227f-43cd-4933-a5e5-0f5db14e1303",
+      "name": "Basic LLM Chain"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "5cb6f53d-8868-4aa7-a7d6-779d71607491",
+              "name": "summary",
+              "value": "={{ $json.text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1936,
+        640
+      ],
+      "id": "ca792951-ab8b-46b3-8aa1-94527bd85d50",
+      "name": "Summary Output"
+    },
+    {
+      "parameters": {
+        "model": "deepseek/deepseek-chat",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        1552,
+        864
+      ],
+      "id": "e2a94e00-07ad-4cb9-b47e-09d2be3fd450",
+      "name": "Generate Summary",
+      "credentials": {
+        "openRouterApi": {
+          "id": "hqwLI4gUvlRDGZ4s",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## 1. **Main AI Agent**",
+        "height": 496,
+        "width": 576,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        208,
+        -192
+      ],
+      "typeVersion": 1,
+      "id": "d2c2249f-7cb3-48f5-9b20-572fac6cf9d1",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "## 2. **Gmail Sub-Agent**",
+        "height": 560,
+        "width": 816,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1168,
+        -192
+      ],
+      "typeVersion": 1,
+      "id": "7ccecfe1-27bb-43c2-ba6a-f6108dd7e3d3",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "## 3. **News Fetcher**",
+        "height": 240,
+        "width": 208,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        880,
+        208
+      ],
+      "typeVersion": 1,
+      "id": "4f8a4608-c4ec-452f-9e49-59c99d3a6531",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "## 4. **RAG Sub-Agent**",
+        "height": 544,
+        "width": 640,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        208,
+        464
+      ],
+      "typeVersion": 1,
+      "id": "132e930d-dff9-4045-8fd9-c2cef8d96f78",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "## **Document Summary Sub-Agent (Calling by the workflow)**",
+        "height": 480,
+        "width": 1216,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        928,
+        528
+      ],
+      "typeVersion": 1,
+      "id": "1979b9c1-3ff4-40f8-b775-990f781f25b1",
+      "name": "Sticky Note4"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "QNA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Communicate": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "QNA",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Storage": {
+      "ai_memory": [
+        [
+          {
+            "node": "QNA",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RAG AI Agent": {
+      "ai_tool": [
+        [
+          {
+            "node": "QNA",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail Agent": {
+      "ai_tool": [
+        [
+          {
+            "node": "QNA",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Knowledge Base": {
+      "ai_tool": [
+        [
+          {
+            "node": "RAG AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings Ollama": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Knowledge Base",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Gmail Response": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Gmail Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate RAG Response": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "RAG AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a message in Gmail": {
+      "ai_tool": [
+        [
+          {
+            "node": "Gmail Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a message in Gmail": {
+      "ai_tool": [
+        [
+          {
+            "node": "Gmail Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a draft in Gmail": {
+      "ai_tool": [
+        [
+          {
+            "node": "Gmail Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get many messages in Gmail": {
+      "ai_tool": [
+        [
+          {
+            "node": "Gmail Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "ai_tool": [
+        [
+          {
+            "node": "QNA",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call 'sub agent 2'": {
+      "ai_tool": [
+        [
+          {
+            "node": "RAG AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Get Document",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Document": {
+      "main": [
+        [
+          {
+            "node": "Extract from File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File": {
+      "main": [
+        [
+          {
+            "node": "Markdown",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Markdown": {
+      "main": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Basic LLM Chain": {
+      "main": [
+        [
+          {
+            "node": "Summary Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Summary": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "1b7f3408-8ae3-4f93-98c1-10085f20b5e8",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "dca6f58ddc2bc042b2a0b87df68cc95840e7acfd95b687d59e2ddc6d1e244ed1"
+  },
+  "id": "01ykpPErcX2yhEuH",
+  "tags": []
+}
