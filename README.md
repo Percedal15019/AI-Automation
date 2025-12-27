@@ -40,10 +40,13 @@ Now i am going to show some of my workflows to you which i am working on.
 
 ## 🏃‍♂️‍➡️ Workflows 
 
-INDEX
+→ INDEX:
 
-- [AI ChatBot](#-mcp-server)
-
+- [AI ChatBot](#-ai-chatbot)
+- [MCP Server](#-mcp-server)
+- [Web Search](#-web-search)
+- [RAG Agent](#-rag-agent)
+- [](#-)
 
 
 <h2>→ AI ChatBot</h2>
