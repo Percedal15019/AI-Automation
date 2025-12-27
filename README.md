@@ -6,7 +6,7 @@ In this repository, i will talk about what and why i learn about AI automation a
 
 <br>
 
-<h1>👨‍💻 Introduction</h1> 
+<h2>👨‍💻 Introduction</h2> 
 
 Sending custom messages to anyone, emails, posts and so on tasks can be automate with the help of some tools. In this repo, I will talk about **n8n** which is an automation platform were you can create your own easy and simple automation without coding.
 
@@ -381,7 +381,7 @@ Download Link ⇉ [Multi Agent Model](https://github.com/Percedal15019/AI-Automa
 
 <br>
 
-## 🗒️ References
+# 🗒️ References
 
 I will add more workflows in the future as i am working on them. Here are some links which would help you in your AI Automation Journey as well: 
 
@@ -392,6 +392,6 @@ I will add more workflows in the future as i am working on them. Here are some l
 
 <br>
 
-## → License
+# → License
 
 This Project is licensed under [MIT License](https://github.com/Percedal15019/AI-Automation/blob/main/LICENSE)
