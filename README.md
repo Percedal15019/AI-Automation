@@ -152,7 +152,7 @@ PostgreSQL is the database engine itself, while Supabase is a full development p
 
 The plus point of this is that all the data is stored in a cloud and can be accessed it without using the "Simple Memory" node which uses your systems performance as well as memory.
 
-Download Link ⇉ [SupaBase & Postgres]()
+Download Link ⇉ [SupaBase & Postgres](https://github.com/Percedal15019/AI-Automation/blob/main/workflow/Supabase%20%26%20Postgres.json)
 
 <br>
 
@@ -334,19 +334,19 @@ How it works:
 
 <br>
 
-Download Link ⇉ [Audio Transcription & ChatBot]()
+Download Link ⇉ [Audio Transcription & ChatBot](https://github.com/Percedal15019/AI-Automation/blob/main/workflow/Audio%20Transcription%20%26%20ChatBot.json)
 
 <br>
 
 Summary of Technologies Used
 
-- **AssemblyAI**: For converting Audio to Text.
+- [**AssemblyAI**](https://www.assemblyai.com/): For converting Audio to Text.
 
-- **Pinecone**: A Vector Database for storing and searching the text context.
+- [**Pinecone**](https://www.pinecone.io): A Vector Database for storing and searching the text context.
 
-- **Ollama**: Likely running a local model (like Llama3 or Mistral) to generate embeddings (numerical data for the text).
+- [**Ollama**](https://ollama.com): Likely running a local model (like Llama3 or Mistral) to generate embeddings (numerical data for the text).
 
-- **OpenRouter**: Provides access to powerful LLMs (like GPT-4 or Claude) to power the chat response.
+- [**OpenRouter**](https://openrouter.ai): Provides access to powerful LLMs (like GPT-4 or Claude) to power the chat response.
 
 <br>
 
@@ -375,20 +375,9 @@ Summary of Technologies Used
 
 
 
+<br>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+Download Link ⇉ [Multi Agent Model](https://github.com/Percedal15019/AI-Automation/blob/main/workflow/Multi%20Agentic%20Model.json)
 
 <br>
 
