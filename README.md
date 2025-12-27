@@ -40,14 +40,17 @@ Now i am going to show some of my workflows to you which i am working on.
 
 ## 🏃‍♂️‍➡️ Workflows 
 
-→ INDEX:
+→ **INDEX:**
 
 - [AI ChatBot](#-ai-chatbot)
 - [MCP Server](#-mcp-server)
 - [Web Search](#-web-search)
+- [SupaBase & Postgres](#-supabase-&-postgres)
 - [RAG Agent](#-rag-agent)
-- [](#-)
+- [Audio Transcription & Chat Bot](#-audio-transcription-&-chat-bot)
+- [Multi Agent Model](#-multi-agent-model)
 
+<br>
 
 <h2>→ AI ChatBot</h2>
 
@@ -121,6 +124,10 @@ How Web Search Works:
 It is basic and simple without any requirements of http request node which makes things complicated (for me you are free to try as all) easy to deploy.
 
 Download Link ⇉ [Web Search](https://github.com/Percedal15019/AI-Automation/blob/main/workflow/Web%20Search%20Using%20Perplexity.json)
+
+<br>
+
+<h2>→ SupaBase & Postgres</h2>
 
 <br>
 
@@ -221,6 +228,14 @@ Download Link ⇉ [RAG Agent](https://github.com/Percedal15019/AI-Automation/blo
 5. If you have <a href="https://openai.com">**OpenAI’s API Key**</a> then use embedding small model in pinecone and same in n8n as well. I chose ollama because I don’t like openAI at all and its free plan is the worst. But <a href="https://ollama.com">**Ollama**</a> is GOATed because of it runs locally so I will recommend it (but if you have OpenAI’s API Key then use it.)
 
 6. Also I will recommend using <a href="https://openrouter.ai">**OpenRouter**</a> as with only one API Key you can access many different free AI models easily and no need to sign in for different AI models.
+
+<br>
+
+<h2>→ Audio Transcription & Chat Bot</h2>
+
+<br>
+
+<h2>→ Multi Agent Model</h2>
 
 <br>
 
