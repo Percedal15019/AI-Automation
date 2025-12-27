@@ -274,8 +274,11 @@ The following are the image of the Fully Understanding and Reliable Audio Transc
   </tr>
 </table>
 
+<br>
 
+How it works:
 
+- 
 
 
 
