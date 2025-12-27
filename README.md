@@ -271,7 +271,7 @@ The following are the image of the Fully Understanding and Reliable Audio Transc
 <table>
   <tr>
     <td>
-      <img src="images/Audio%20Transcription%20%26%20ChatBot.png" width="1000">
+      <img src="images/Audio%20Transcription%20%26%20ChatBot.png" width="1100">
     </td>
   </tr>
 </table>
