@@ -44,13 +44,13 @@ Now i am going to show some of my workflows to you which i am working on.
 
 | **INDEX** |
 | ------------- |
-| - [AI ChatBot](#-ai-chatbot) |
-| - [MCP Server](#-mcp-server) |
-| - [Web Search](#-web-search) |
-| - [SupaBase & Postgres](#-supabase--postgres) |
-| - [RAG Agent](#-rag-agent) | 
-| - [Audio Transcription & Chat Bot](#-audio-transcription--chat-bot) |
-| - [Multi Agent Model](#-multi-agent-model) |
+| ¤৹ [AI ChatBot](#-ai-chatbot) |
+| ৹ [MCP Server](#-mcp-server) |
+| ৹ [Web Search](#-web-search) |
+| ৹ [SupaBase & Postgres](#-supabase--postgres) |
+| ৹ [RAG Agent](#-rag-agent) | 
+| ৹ [Audio Transcription & Chat Bot](#-audio-transcription--chat-bot) |
+| ৹ [Multi Agent Model](#-multi-agent-model) |
 
 <br>
 
