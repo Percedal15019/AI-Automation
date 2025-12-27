@@ -264,6 +264,8 @@ It is designed for scenarios where users upload audio files, which are transcrib
 
 Also, this workflow enables an end-to-end audio transcription and conversational AI chatbot system, leveraging AssemblyAI for transcription and summarization, [Ollama](https://ollama.com) for embeddings and [OpenRouter](https://openrouter.ai) for chat, and [Pinecone](https://www.pinecone.io) as a vector database storage.
 
+<br>
+
 The following are the image of the Fully Understanding and Reliable Audio Transcriping Chat Agent which will help you anytime:
 
 <table>
