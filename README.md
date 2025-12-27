@@ -152,6 +152,8 @@ PostgreSQL is the database engine itself, while Supabase is a full development p
 
 The plus point of this is that all the data is stored in a cloud and can be accessed it without using the "Simple Memory" node which uses your systems performance as well as memory.
 
+Download Link ⇉ [SupaBase & Postgres]()
+
 <br>
 
 <h2>→ RAG Agent</h2>
