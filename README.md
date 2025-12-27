@@ -119,7 +119,7 @@ How Web Search Works:
   <tr>
     <td align="center"><b>Web‑Aware AI ChatBot</b></td>
     <tr>
-    <td><img src="images/Web%20Search%20Using%20Perplexity.png" width="800"></td>
+    <td><img src="images/Web%20Search%20Using%20Perplexity.png" width="700"></td>
   </tr>
 </table>
 
