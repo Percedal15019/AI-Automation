@@ -350,6 +350,15 @@ Summary of Technologies Used
 
 <br>
 
+**🔴 NOTE:**
+
+1. Always upload **Audio files** in mp3 format.
+2. Make sure that the audio file dont have much music in it as it would alter the output.
+3. Also you can monitor what output it produces with the help of **Google Sheets**.
+4. To enable the Google Sheet API, it would have to enable it from the [Google Cloud](https://cloud.google.com), search for google sheets and enable it from there.
+5. Remember to save your Accounts Client Id and Clint Secret to a safe place.  
+
+<br>
 
 <h2>→ Multi Agent Model</h2>
 
