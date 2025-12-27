@@ -40,6 +40,12 @@ Now i am going to show some of my workflows to you which i am working on.
 
 ## 🏃‍♂️‍➡️ Workflows 
 
+INDEX
+
+- [AI ChatBot](# AI ChatBot)
+
+
+
 <h2>→ AI ChatBot</h2>
 
 An **AI chatbot** is a software program that uses artificial intelligence, specifically natural language processing (NLP) and machine learning (ML), to simulate human conversation and respond to user inquiries in real time.
