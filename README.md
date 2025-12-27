@@ -49,7 +49,7 @@ Now i am going to show some of my workflows to you which i am working on.
 | ৹ [Web Search](#-web-search) |
 | ৹ [SupaBase & Postgres](#-supabase--postgres) |
 | ৹ [RAG Agent](#-rag-agent) | 
-| ৹ [Audio Transcription & Chat Bot](#-audio-transcription--chat-bot) |
+| ৹ [Audio Transcription & Chat Bot](#-audio-transcription--chatbot) |
 | ৹ [Multi Agent Model](#-multi-agent-model) |
 
 <br>
@@ -256,7 +256,7 @@ Download Link ⇉ [RAG Agent](https://github.com/Percedal15019/AI-Automation/blo
 
 <br>
 
-<h2>→ Audio Transcription & Chat Bot</h2>
+<h2>→ Audio Transcription & ChatBot</h2>
 
 It transform audio files into searchable, interactive knowledge with automated transcription and speaker labeling from [AssemblyAI](https://www.assemblyai.com/). 
 
@@ -332,6 +332,10 @@ How it works:
 
 <br>
 
+Download Link ⇉ [Audio Transcription & ChatBot]()
+
+<br>
+
 Summary of Technologies Used
 
 - **AssemblyAI**: For converting Audio to Text.
@@ -342,7 +346,7 @@ Summary of Technologies Used
 
 - **OpenRouter**: Provides access to powerful LLMs (like GPT-4 or Claude) to power the chat response.
 
-
+<br>
 
 
 <h2>→ Multi Agent Model</h2>
