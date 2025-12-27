@@ -296,9 +296,9 @@ How it works:
 
 - **If Node**: This checks the status.
 
-    -**False (Not done)**: It loops back to the "Wait" node to try again later.
+    - **False (Not done)**: It loops back to the "Wait" node to try again later.
 
-    -**True (Completed)**: It breaks the loop and moves to the next step, carrying the finished text transcript.
+    - **True (Completed)**: It breaks the loop and moves to the next step, carrying the finished text transcript.
 
 
 
