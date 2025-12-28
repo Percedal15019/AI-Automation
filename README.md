@@ -452,7 +452,7 @@ This architecture is designed for enterprise-grade personal assistance. Instead 
 
 # 🗒️ References
 
-I will add more workflows in the future as i am working on them. Here are some links which would help you in your AI Automation Journey as well: 
+I will add more of my workflows in the future as i am working on them. Here are some links which would help you in your AI Automation Journey as well: 
 
 - [Zie619 Workflows](https://github.com/Zie619/n8n-workflows)
 - [Nate Herk](https://www.youtube.com/@nateherk)
