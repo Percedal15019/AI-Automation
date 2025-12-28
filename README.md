@@ -281,7 +281,7 @@ The following are the image of the Fully Understanding and Reliable Audio Transc
 
 How it works:
 
-1. **Uploading Audio to AssemblyAI**
+1. **Uploading Audio to AssemblyAI**:
 
   - **On form Submission**: The process starts when a user uploads a file via this trigger. It likely accepts an audio file from a frontend form.
 
@@ -291,7 +291,7 @@ How it works:
 
 <br>
 
-2. **The Polling Loop**
+2. **The Polling Loop**:
 
 *Transcribing audio takes time, so the workflow cannot proceed immediately. It uses a "polling" mechanism to check for completion.*
 
@@ -307,7 +307,7 @@ How it works:
 
 <br>
 
-3. **Vectorization & Logging**
+3. **Vectorization & Logging**:
 
   - **Convert to File**: Converts the raw text transcript into a file format n8n can process.
 
@@ -321,7 +321,7 @@ How it works:
 
 <br>
 
-4. **The AI ChatBot**
+4. **The AI ChatBot**:
 
   - **When chat message received**: The trigger for the chat interface.
 
@@ -381,7 +381,7 @@ This workflow is designed to implement a Multi-Agent AI system within n8n that i
 
 Here is the breakdown of how **Hierarchical Multi-Agent System** operates:
 
-1. **Main AI Agent** (The Orchestrator)
+1. **Main AI Agent** (The Orchestrator):
 
 *This is the central "brain" and the only interface the user interacts with directly.*
 
@@ -391,7 +391,7 @@ Here is the breakdown of how **Hierarchical Multi-Agent System** operates:
 
 <br>
 
-2. **Gmail Sub-Agent** (The Secretary)
+2. **Gmail Sub-Agent** (The Secretary):
 
   - **Capabilities**: It has specific tools to Get messages (read inbox), Create drafts, and Send messages.
 
@@ -399,7 +399,7 @@ Here is the breakdown of how **Hierarchical Multi-Agent System** operates:
 
 <br>
 
-3. **News Fetcher** (The Researcher)
+3. **News Fetcher** (The Researcher):
 
   - **Function**: A direct tool (HTTP Request) connected to newsapi.org.
 
@@ -407,7 +407,7 @@ Here is the breakdown of how **Hierarchical Multi-Agent System** operates:
 
 <br>
 
-4. **RAG Sub-Agent** (The Librarian)
+4. **RAG Sub-Agent** (The Librarian):
 
 *This agent handles "Knowledge Retrieval" (Retrieval-Augmented Generation).*
 
@@ -417,7 +417,7 @@ Here is the breakdown of how **Hierarchical Multi-Agent System** operates:
 
 <br>
 
-5. **Document Summary Sub-Agent** (The Analyst)
+5. **Document Summary Sub-Agent** (The Analyst):
 
 *This is a utility workflow that runs in the background when triggered.*
 
