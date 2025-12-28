@@ -51,7 +51,7 @@ Now i am going to show some of my workflows to you which i am working on.
 | ৹ [SupaBase & Postgres](#-supabase--postgres) |
 | ৹ [RAG Agent](#-rag-agent) | 
 | ৹ [Audio Transcription & ChatBot](#-audio-transcription--chatbot) |
-| ৹ [Multi Agentic Model](#-multi-agentic-model) |
+| ৹ [Hierarchical Multi-Agent System](#-hierarchical-multi-agent-system) |
 
 <br>
 
@@ -361,11 +361,11 @@ Summary of Technologies Used
 
 <br>
 
-<h2>→ Multi Agentic Model</h2>
+<h2>→ Hierarchical Multi-Agent System</h2>
 
 This workflow is designed to implement a Multi-Agent AI system within n8n that intelligently routes user queries to specialized sub-agents or tools. It targets use cases involving **document retrieval and summarization, email management via Gmail, and fetching recent news data**, all orchestrated through a coordinating AI agent.
 
-This workflow is also known as **"Hierarchical Multi-Agent System".**
+
 
 <br>
 
@@ -379,16 +379,57 @@ This workflow is also known as **"Hierarchical Multi-Agent System".**
 
 <br>
 
+Here is the breakdown of how **Hierarchical Multi-Agent System** operates:
 
+1. **Main AI Agent** (The Orchestrator)
 
+*This is the central "brain" and the only interface the user interacts with directly.*
 
+- **Role**: It acts as a router or project manager. When a chat message comes in, it analyzes the intent.
 
-
-
+- **Decision Making**: Instead of doing everything itself, it decides which tool to use. If you ask about emails, it calls the Gmail Sub-Agent. If you ask about stored documents, it calls the RAG Sub-Agent. If you ask for current events, it uses the News Fetcher.
 
 <br>
 
-Download Link ⇉ [Multi Agentic Model](https://github.com/Percedal15019/AI-Automation/blob/main/workflow/Multi%20Agentic%20Model.json)
+2. **Gmail Sub-Agent** (The Secretary)
+
+- **Capabilities**: It has specific tools to Get messages (read inbox), Create drafts, and Send messages.
+
+- **Autonomy**: The Main Agent passes the request (e.g., "Draft a reply to John"), and this sub-agent handles the specific API logic with Gmail to execute it.
+
+<br>
+
+3. **News Fetcher** (The Researcher)
+
+- **Function**: A direct tool (HTTP Request) connected to newsapi.org.
+
+- **Use Case**: This gives the Main Agent access to real-time external data, preventing hallucinations about current events.
+
+<br>
+
+4. **RAG Sub-Agent** (The Librarian)
+
+*This agent handles "Knowledge Retrieval" (Retrieval-Augmented Generation).*
+
+- **Knowledge Base**: It connects to Pinecone Vector Database (using Embeddings Ollama to understand context). This allows it to answer questions based on specific, private data that isn't on the public internet.
+
+- **Nested Capability**: It has a tool called "Call sub agent 2", which calls **"The Analyst"**.
+
+<br>
+
+5. **Document Summary Sub-Agent** (The Analyst)
+
+*This is a utility workflow that runs in the background when triggered.*
+
+- **Trigger**: "When Executed by Another Workflow" (likely called by the RAG or Main agent).
+
+- **Pipeline**: It downloads a file from Google Drive, extracts the text, converts it to Markdown, and uses a Basic LLM Chain to summarize it.
+
+- **Purpose**: This creates a clean summary of complex documents so other agents can understand them easily without reading the whole file every time.
+
+<br>
+
+Download Link ⇉ [Hierarchical Multi-Agent Systeml](https://github.com/Percedal15019/AI-Automation/blob/main/workflow/Multi%20Agentic%20Model.json)
 
 <br>
 
