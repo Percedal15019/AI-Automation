@@ -51,7 +51,7 @@ Now i am going to show some of my workflows to you which i am working on.
 | ৹ [SupaBase & Postgres](#-supabase--postgres) |
 | ৹ [RAG Agent](#-rag-agent) | 
 | ৹ [Audio Transcription & ChatBot](#-audio-transcription--chatbot) |
-| ৹ [Multi Agent Model](#-multi-agent-model) |
+| ৹ [Multi Agentic Model](#-multi-agentic-model) |
 
 <br>
 
@@ -361,11 +361,11 @@ Summary of Technologies Used
 
 <br>
 
-<h2>→ Multi Agent Model</h2>
+<h2>→ Multi Agentic Model</h2>
 
+This workflow is designed to implement a Multi-Agent AI system within n8n that intelligently routes user queries to specialized sub-agents or tools. It targets use cases involving **document retrieval and summarization, email management via Gmail, and fetching recent news data**, all orchestrated through a coordinating AI agent.
 
-
-
+This workflow is also known as **"Hierarchical Multi-Agent System".**
 
 
 
@@ -378,7 +378,7 @@ Summary of Technologies Used
 
 <br>
 
-Download Link ⇉ [Multi Agent Model](https://github.com/Percedal15019/AI-Automation/blob/main/workflow/Multi%20Agentic%20Model.json)
+Download Link ⇉ [Multi Agentic Model](https://github.com/Percedal15019/AI-Automation/blob/main/workflow/Multi%20Agentic%20Model.json)
 
 <br>
 
