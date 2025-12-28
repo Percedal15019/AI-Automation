@@ -187,18 +187,18 @@ From the First Part, we have understand that:
 
 1. **The Trigger (Start):**
 
-- Node: When clicking 'Execute workflow'
-- Function: This is a manual trigger. The process starts only when a user explicitly clicks the "Test" or "Execute" button in the n8n interface.
+  - Node: When clicking 'Execute workflow'
+  - Function: This is a manual trigger. The process starts only when a user explicitly clicks the "Test" or "Execute" button in the n8n interface.
 
 2. **The Data Source:**
 
-- Node: Download files From Drive (Google Drive)
-- Function: It connects to Google Drive to download a specific file. This acts as the raw knowledge source for your AI.
+  - Node: Download files From Drive (Google Drive)
+  - Function: It connects to Google Drive to download a specific file. This acts as the raw knowledge source for your AI.
 
 3. **The Storage Destination:**
 
-- Node: <a href="https://www.pinecone.io/">**Pinecone Vector Store**</a> 
-- Function: This is the core "sink" where data ends up. Pinecone is a popular vector database used to store high-dimensional data (vectors) that represent the meaning of text.
+  - Node: <a href="https://www.pinecone.io/">**Pinecone Vector Store**</a> 
+  - Function: This is the core "sink" where data ends up. Pinecone is a popular vector database used to store high-dimensional data (vectors) that represent the meaning of text.
 
 <br>
 
@@ -206,20 +206,20 @@ From the Second Part, we have understand that:
 
 1. **Trigger (When chat message received):**
    
-- The workflow initiates whenever a user sends a message.
+  - The workflow initiates whenever a user sends a message.
 
 2. **The Core Brain (AI Agent):**
 
-- This central node orchestrates the logic. Instead of just answering blindly, it uses connected "peripherals" (tools and memory) to formulate a smart response.
+  - This central node orchestrates the logic. Instead of just answering blindly, it uses connected "peripherals" (tools and memory) to formulate a smart response.
 
 3. **Knowledge Base (Vector Store Tool):**
 
-- The agent is equipped with a tool to "look up" information.
-- It uses Pinecone, a popular vector database, to store and retrieve knowledge that the LLM wasn't trained on (e.g., your specific company data or documents).
+  - The agent is equipped with a tool to "look up" information.
+  - It uses Pinecone, a popular vector database, to store and retrieve knowledge that the LLM wasn't trained on (e.g., your specific company data or documents).
   
 4. **Memory (Window Buffer Memory):**
    
-- The agent isn't amnesiac; it remembers the context of the current conversation (a "window" of recent messages), allowing for back-and-forth dialogue rather than just one-off Q&A.
+  - The agent isn't amnesiac; it remembers the context of the current conversation (a "window" of recent messages), allowing for back-and-forth dialogue rather than just one-off Q&A.
 
 <br>
 
@@ -283,11 +283,11 @@ How it works:
 
 1. **Uploading Audio to AssemblyAI**
 
-- **On form Submission**: The process starts when a user uploads a file via this trigger. It likely accepts an audio file from a frontend form.
+  - **On form Submission**: The process starts when a user uploads a file via this trigger. It likely accepts an audio file from a frontend form.
 
-- **HTTP Request (Upload)**: The workflow sends the uploaded audio file to AssemblyAI, a service specializing in Speech-to-Text (transcription).
+  - **HTTP Request (Upload)**: The workflow sends the uploaded audio file to AssemblyAI, a service specializing in Speech-to-Text (transcription).
 
-- **HTTP Request (Transcript)**: This initiates the transcription job and returns a "job_id" that is needed to track progress.
+  - **HTTP Request (Transcript)**: This initiates the transcription job and returns a "job_id" that is needed to track progress.
 
 <br>
 
@@ -295,43 +295,43 @@ How it works:
 
 *Transcribing audio takes time, so the workflow cannot proceed immediately. It uses a "polling" mechanism to check for completion.*
 
-- **Wait**: The workflow pauses for a set time (e.g., 5-10 seconds) to give the server time to process.
+  - **Wait**: The workflow pauses for a set time (e.g., 5-10 seconds) to give the server time to process.
 
-- **HTTP Request (Get Status)**: It uses the job_id from Step 1 to ask AssemblyAI: "Is the transcription done yet?"
+  - **HTTP Request (Get Status)**: It uses the job_id from Step 1 to ask AssemblyAI: "Is the transcription done yet?"
 
-- **If Node**: This checks the status.
+  - **If Node**: This checks the status.
 
-    - **False (Not done)**: It loops back to the "Wait" node to try again later.
+      - **False (Not done)**: It loops back to the "Wait" node to try again later.
 
-    - **True (Completed)**: It breaks the loop and moves to the next step, carrying the finished text transcript.
+      - **True (Completed)**: It breaks the loop and moves to the next step, carrying the finished text transcript.
 
 <br>
 
 3. **Vectorization & Logging**
 
-- **Convert to File**: Converts the raw text transcript into a file format n8n can process.
+  - **Convert to File**: Converts the raw text transcript into a file format n8n can process.
 
-- **Pinecone Vector Store**: This is the core database. It doesn't just store text; it stores "vectors" (mathematical representations of meaning).
+  - **Pinecone Vector Store**: This is the core database. It doesn't just store text; it stores "vectors" (mathematical representations of meaning).
 
-    - **Ollama Embeddings**: It uses Ollama (a tool for running local AI models) to convert the text into these vectors.
+      - **Ollama Embeddings**: It uses Ollama (a tool for running local AI models) to convert the text into these vectors.
 
-    - **Recursive Character Text Splitter**: It chops the long transcript into smaller, manageable chunks so the AI doesn't get overwhelmed.
+      - **Recursive Character Text Splitter**: It chops the long transcript into smaller, manageable chunks so the AI doesn't get overwhelmed.
 
-- **Append row in sheet**: Finally, it logs the details (likely the filename, transcription status, or ID) into a spreadsheet (like Google Sheets) for record-keeping.
+  - **Append row in sheet**: Finally, it logs the details (likely the filename, transcription status, or ID) into a spreadsheet (like Google Sheets) for record-keeping.
 
 <br>
 
 4. **The AI ChatBot**
 
-- **When chat message received**: The trigger for the chat interface.
+  - **When chat message received**: The trigger for the chat interface.
 
-- **AI Agent**: This is the "brain" that manages the conversation. It has access to three key components:
+  - **AI Agent**: This is the "brain" that manages the conversation. It has access to three key components:
 
-     - **OpenRouter Chat Model**: The Large Language Model (LLM) that generates the actual human-like answers.
+       - **OpenRouter Chat Model**: The Large Language Model (LLM) that generates the actual human-like answers.
 
-     - **Simple Memory**: Allows the bot to remember previous messages in the current conversation. Also Postgres is recommended while using this workflow.
+       - **Simple Memory**: Allows the bot to remember previous messages in the current conversation. Also Postgres is recommended while using this workflow.
 
-     - **Pinecone Vector Store (Tool)**: This allows the agent to "look up" information. When you ask a question, the agent searches the Pinecone database (created in Step 3) for the specific parts of the audio transcript that are relevant to your question, using the Ollama embeddings model to match meanings.
+       - **Pinecone Vector Store (Tool)**: This allows the agent to "look up" information. When you ask a question, the agent searches the Pinecone database (created in Step 3) for the specific parts of the audio transcript that are relevant to your question, using the Ollama embeddings model to match meanings.
 
 <br>
 
@@ -385,25 +385,25 @@ Here is the breakdown of how **Hierarchical Multi-Agent System** operates:
 
 *This is the central "brain" and the only interface the user interacts with directly.*
 
-- **Role**: It acts as a router or project manager. When a chat message comes in, it analyzes the intent.
+  - **Role**: It acts as a router or project manager. When a chat message comes in, it analyzes the intent.
 
-- **Decision Making**: Instead of doing everything itself, it decides which tool to use. If you ask about emails, it calls the Gmail Sub-Agent. If you ask about stored documents, it calls the RAG Sub-Agent. If you ask for current events, it uses the News Fetcher.
+  - **Decision Making**: Instead of doing everything itself, it decides which tool to use. If you ask about emails, it calls the Gmail Sub-Agent. If you ask about stored documents, it calls the RAG Sub-Agent. If you ask for current events, it uses the News Fetcher.
 
 <br>
 
 2. **Gmail Sub-Agent** (The Secretary)
 
-- **Capabilities**: It has specific tools to Get messages (read inbox), Create drafts, and Send messages.
+  - **Capabilities**: It has specific tools to Get messages (read inbox), Create drafts, and Send messages.
 
-- **Autonomy**: The Main Agent passes the request (e.g., "Draft a reply to John"), and this sub-agent handles the specific API logic with Gmail to execute it.
+  - **Autonomy**: The Main Agent passes the request (e.g., "Draft a reply to John"), and this sub-agent handles the specific API logic with Gmail to execute it.
 
 <br>
 
 3. **News Fetcher** (The Researcher)
 
-- **Function**: A direct tool (HTTP Request) connected to newsapi.org.
+  - **Function**: A direct tool (HTTP Request) connected to newsapi.org.
 
-- **Use Case**: This gives the Main Agent access to real-time external data, preventing hallucinations about current events.
+  - **Use Case**: This gives the Main Agent access to real-time external data, preventing hallucinations about current events.
 
 <br>
 
@@ -411,9 +411,9 @@ Here is the breakdown of how **Hierarchical Multi-Agent System** operates:
 
 *This agent handles "Knowledge Retrieval" (Retrieval-Augmented Generation).*
 
-- **Knowledge Base**: It connects to Pinecone Vector Database (using Embeddings Ollama to understand context). This allows it to answer questions based on specific, private data that isn't on the public internet.
+  - **Knowledge Base**: It connects to Pinecone Vector Database (using Embeddings Ollama to understand context). This allows it to answer questions based on specific, private data that isn't on the public internet.
 
-- **Nested Capability**: It has a tool called "Call sub agent 2", which calls **"The Analyst"**.
+  - **Nested Capability**: It has a tool called "Call sub agent 2", which calls **"The Analyst"**.
 
 <br>
 
@@ -421,11 +421,11 @@ Here is the breakdown of how **Hierarchical Multi-Agent System** operates:
 
 *This is a utility workflow that runs in the background when triggered.*
 
-- **Trigger**: "When Executed by Another Workflow" (likely called by the RAG or Main agent).
+  - **Trigger**: "When Executed by Another Workflow" (likely called by the RAG or Main agent).
 
-- **Pipeline**: It downloads a file from Google Drive, extracts the text, converts it to Markdown, and uses a Basic LLM Chain to summarize it.
+  - **Pipeline**: It downloads a file from Google Drive, extracts the text, converts it to Markdown, and uses a Basic LLM Chain to summarize it.
 
-- **Purpose**: This creates a clean summary of complex documents so other agents can understand them easily without reading the whole file every time.
+  - **Purpose**: This creates a clean summary of complex documents so other agents can understand them easily without reading the whole file every time.
 
 <br>
 
