@@ -363,6 +363,8 @@ Summary of Technologies Used
 
 <h2>→ Hierarchical Multi-Agent System</h2>
 
+An intelligent, modular automation system powered by n8n that uses a hierarchical multi-agent architecture. It features a central "Orchestrator" agent capable of intelligently delegating complex tasks—ranging from email management and document summarization to real-time news retrieval—to specialized sub-agents.
+
 This workflow is designed to implement a Multi-Agent AI system within n8n that intelligently routes user queries to specialized sub-agents or tools. It targets use cases involving **document retrieval and summarization, email management via Gmail, and fetching recent news data**, all orchestrated through a coordinating AI agent.
 
 
@@ -372,7 +374,7 @@ This workflow is designed to implement a Multi-Agent AI system within n8n that i
 <table>
   <tr>
     <td>
-      <img src="images/Multi%20Agentic%20Workflow.png" width="800">
+      <img src="images/Multi%20Agentic%20Workflow.png" width="1000">
     </td>
   </tr>
 </table>
@@ -432,6 +434,18 @@ Here is the breakdown of how **Hierarchical Multi-Agent System** operates:
 Download Link ⇉ [Hierarchical Multi-Agent Systeml](https://github.com/Percedal15019/AI-Automation/blob/main/workflow/Multi%20Agentic%20Model.json)
 
 <br>
+
+This architecture is designed for enterprise-grade personal assistance. Instead of a single, monolithic chatbot attempting to handle every request (and often failing at edge cases), this system mimics a corporate structure: a Manager (Main Agent) delegates work to a Specialist (Sub-Agent), ensuring higher accuracy, better modularity, and easier debugging.
+
+
+
+
+
+
+
+
+
+
 
 # 🗒️ References
 
