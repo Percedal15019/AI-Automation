@@ -383,6 +383,8 @@ This workflow is designed to implement a Multi-Agent AI system within n8n that i
 
 Here is the breakdown of how **Hierarchical Multi-Agent System** operates:
 
+<br>
+
 1. **Main AI Agent** (The Orchestrator):
 
 *This is the central "brain" and the only interface the user interacts with directly.*
