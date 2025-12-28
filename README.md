@@ -357,7 +357,8 @@ Summary of Technologies Used
 2. Make sure that the audio file dont have much music in it as it would alter the output.
 3. Also you can monitor what output it produces with the help of **Google Sheets**.
 4. To enable the Google Sheet API, it would have to enable it from the [Google Cloud](https://cloud.google.com), search for google sheets and enable it from there.
-5. Remember to save your Accounts Client Id and Clint Secret to a safe place.  
+5. Remember to save your Accounts Client Id and Clint Secret to a safe place.
+6. Also, its recommended to use [Postgres Chat Memory](https://www.postgresql.org/) as it is more reliable for future proofing.
 
 <br>
 
@@ -383,8 +384,6 @@ This workflow is designed to implement a Multi-Agent AI system within n8n that i
 
 Here is the breakdown of how **Hierarchical Multi-Agent System** operates:
 
-<br>
-
 1. **Main AI Agent** (The Orchestrator):
 
 *This is the central "brain" and the only interface the user interacts with directly.*
@@ -405,7 +404,7 @@ Here is the breakdown of how **Hierarchical Multi-Agent System** operates:
 
 3. **News Fetcher** (The Researcher):
 
-  - **Function**: A direct tool (HTTP Request) connected to newsapi.org.
+  - **Function**: A direct tool (HTTP Request) connected to [News API](https://newsapi.org).
 
   - **Use Case**: This gives the Main Agent access to real-time external data, preventing hallucinations about current events.
 
@@ -425,7 +424,7 @@ Here is the breakdown of how **Hierarchical Multi-Agent System** operates:
 
 *This is a utility workflow that runs in the background when triggered.*
 
-  - **Trigger**: "When Executed by Another Workflow" (likely called by the RAG or Main agent).
+  - **Trigger** : "When Executed by Another Workflow", This is only triggered by the RAG Agent or the Main AI Agent if required.
 
   - **Pipeline**: It downloads a file from Google Drive, extracts the text, converts it to Markdown, and uses a Basic LLM Chain to summarize it.
 
@@ -439,14 +438,16 @@ Download Link ⇉ [Hierarchical Multi-Agent Systeml](https://github.com/Percedal
 
 This architecture is designed for enterprise-grade personal assistance. Instead of a single, monolithic chatbot attempting to handle every request (and often failing at edge cases), this system mimics a corporate structure: a Manager (Main Agent) delegates work to a Specialist (Sub-Agent), ensuring higher accuracy, better modularity, and easier debugging.
 
+<br>
 
+**🔴 NOTE:**
 
+1. To enable the Gmail API, it would have to enable it from the [Google Cloud](https://cloud.google.com), search for Gamil and enable it from there.\
+2. Remember to save your Accounts Client Id and Clint Secret to a safe place.
+3. Sometimes the [News Fetcher](https://newsapi.org) may give the latest news (I think thats for the paid plan but it still gives a valid and correct news)
+4. Also, its recommended to use [Postgres Chat Memory](https://www.postgresql.org/) as it is more reliable for future proofing.
 
-
-
-
-
-
+<br>
 
 
 # 🗒️ References
