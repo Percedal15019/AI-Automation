@@ -367,7 +367,17 @@ This workflow is designed to implement a Multi-Agent AI system within n8n that i
 
 This workflow is also known as **"Hierarchical Multi-Agent System".**
 
+<br>
 
+<table>
+  <tr>
+    <td>
+      <img src="images/Multi%20Agentic%20Workflow.png" width="800">
+    </td>
+  </tr>
+</table>
+
+<br>
 
 
 
