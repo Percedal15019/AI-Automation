@@ -83,7 +83,7 @@ To keep everything clean and consistent, please follow these guidelines:
 - Add **Sticky Notes** inside your n8n workflow to explain complex logic visually or not as per you.
 - Prefer **free or freemium APIs** where possible to keep workflows accessible to everyone.
 - If using **Ollama**, mention the specific model used (e.g., llama3, mistral) or anything else i prefer this more, thats it.
-- If using **OpenRouter**, mention which model was tested and works best or anything else i prefer this more, thats it
+- If using **OpenRouter**, mention which model was tested and works best or anything else i prefer this more, thats it.
 - Keep workflow JSON files **Clean and Exported properly** from n8n.
 
 ---
