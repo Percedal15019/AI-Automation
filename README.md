@@ -24,7 +24,7 @@ Its full form is **"Nodemation"** and there are 8 letters seperating n from n so
 
 <h2>🔃 Installation</h2> 
 
-  > [!Disclaimer]
+  > [!DISCLAIMER]
 > You can use n8n from the their official website https://n8n.io/ but i wanted to try a different approach so please take a note of it:
 
 - Downlaod <a href="https://www.docker.com/products/docker-desktop/">**Docker Desktop**</a> from there official website. Download as per your device requirements from it.
