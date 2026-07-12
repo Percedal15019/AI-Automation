@@ -72,7 +72,7 @@ You can chat with it seamlessly and you would just need to put the URL from the 
 
 It creates a small chat icon in the right bottom corner of your front page.
 
-Download Link ⇉ [AI ChatBot](https://github.com/Percedal15019/AI-Automation/blob/main/workflow/Chatbot.json)   
+> Download Link ⇉ [AI ChatBot](https://github.com/Percedal15019/AI-Automation/blob/main/workflow/Chatbot.json)   
 
 <br>
 
@@ -97,7 +97,7 @@ How MCP Server Works:
 
 In the above workflow, i have actually used a [Firecrawl](https://www.firecrawl.dev/) as my MCP server, the other alternatives are [Brave Search API](https://brave.com/search/api/) which works the same. Every MCP server has there respected API key, so put it as per. 
 
-Download Link ⇉ [MCP Server](https://github.com/Percedal15019/AI-Automation/blob/main/workflow/MCP-Server.json)   
+> Download Link ⇉ [MCP Server](https://github.com/Percedal15019/AI-Automation/blob/main/workflow/MCP-Server.json)   
 
 <br>
 
@@ -129,7 +129,7 @@ How Web Search Works:
 
 It is basic and simple without any requirements of http request node which makes things complicated (for me you are free to try as all) easy to deploy.
 
-Download Link ⇉ [Web Search](https://github.com/Percedal15019/AI-Automation/blob/main/workflow/Web%20Search%20Using%20Perplexity.json)
+> Download Link ⇉ [Web Search](https://github.com/Percedal15019/AI-Automation/blob/main/workflow/Web%20Search%20Using%20Perplexity.json)
 
 <br>
 
@@ -154,7 +154,7 @@ PostgreSQL is the database engine itself, while Supabase is a full development p
 
 The plus point of this is that all the data is stored in a cloud and can be accessed it without using the "Simple Memory" node which uses your systems performance as well as memory.
 
-Download Link ⇉ [SupaBase & Postgres](https://github.com/Percedal15019/AI-Automation/blob/main/workflow/Supabase%20%26%20Postgres.json)
+> Download Link ⇉ [SupaBase & Postgres](https://github.com/Percedal15019/AI-Automation/blob/main/workflow/Supabase%20%26%20Postgres.json)
 
 <br>
 
@@ -238,23 +238,17 @@ And finally it looks like this at the end:
 
 <br>
 
-Download Link ⇉ [RAG Agent](https://github.com/Percedal15019/AI-Automation/blob/main/workflow/Talk%20with%20your%20Drive%20folder%20RAG.json)   
+> Download Link ⇉ [RAG Agent](https://github.com/Percedal15019/AI-Automation/blob/main/workflow/Talk%20with%20your%20Drive%20folder%20RAG.json)   
 
 <br>
 
-**🔴 NOTE:**
-
-1. In the first stage, we can see that I have used Google drive as my uploading tool, it requires you to have a client id and client secret which can be found in <a href="https://cloud.google.com/">**Google cloud**</a>.
-
-2. You have to login in with the account you are currently in with n8n. And then go to Clients tab and fill the required details and get your client id and secret. (Here is the link for step-by-step setup ——> https://www.youtube.com/watch?v=CdssoZAslq0 )
-
-3. Also copy and paste the secret somewhere safe first.
-
-4. Connect your pinecone account using its API Key and put the embedding model.
-
-5. If you have <a href="https://openai.com">**OpenAI’s API Key**</a> then use embedding small model in pinecone and same in n8n as well. I chose ollama because I don’t like openAI at all and its free plan is the worst. But <a href="https://ollama.com">**Ollama**</a> is GOATed because of it runs locally so I will recommend it (but if you have OpenAI’s API Key then use it.)
-
-6. Also I will recommend using <a href="https://openrouter.ai">**OpenRouter**</a> as with only one API Key you can access many different free AI models easily and no need to sign in for different AI models.
+> [!NOTE]
+> 1. In the first stage, we can see that I have used Google drive as my uploading tool, it requires you to have a client id and client secret which can be found in <a href="https://cloud.google.com/">**Google cloud**</a>.
+> 2. You have to login in with the account you are currently in with n8n. And then go to Clients tab and fill the required details and get your client id and secret. (Here is the link for step-by-step setup ——> https://www.youtube.com/watch?v=CdssoZAslq0 )
+> 3. Also copy and paste the secret somewhere safe first.
+> 4. Connect your pinecone account using its API Key and put the embedding model.
+> 5. If you have <a href="https://openai.com">**OpenAI’s API Key**</a> then use embedding small model in pinecone and same in n8n as well. I chose ollama because I don’t like openAI at all and its free plan is the worst. But <a href="https://ollama.com">**Ollama**</a> is GOATed because of it runs locally so I will recommend it (but if you have OpenAI’s API Key then use it.)
+> 6. Also I will recommend using <a href="https://openrouter.ai">**OpenRouter**</a> as with only one API Key you can access many different free AI models easily and no need to sign in for different AI models.
 
 <br>
 
@@ -352,14 +346,13 @@ Summary of Technologies Used
 
 <br>
 
-**🔴 NOTE:**
-
-1. Always upload **Audio files** in mp3 format.
-2. Make sure that the audio file dont have much music in it as it would alter the output.
-3. Also you can monitor what output it produces with the help of **Google Sheets**.
-4. To enable the Google Sheet API, it would have to enable it from the [Google Cloud](https://cloud.google.com), search for google sheets and enable it from there.
-5. Remember to save your Accounts Client Id and Clint Secret to a safe place.
-6. Also, its recommended to use [Postgres Chat Memory](https://www.postgresql.org/) as it is more reliable for future proofing.
+> [!NOTE]
+> 1. Always upload **Audio files** in mp3 format.
+> 2. Make sure that the audio file dont have much music in it as it would alter the output.
+> 3. Also you can monitor what output it produces with the help of **Google Sheets**.
+> 4. To enable the Google Sheet API, it would have to enable it from the [Google Cloud](https://cloud.google.com), search for google sheets and enable it from there.
+> 5. Remember to save your Accounts Client Id and Clint Secret to a safe place.
+> 6. Also, its recommended to use [Postgres Chat Memory](https://www.postgresql.org/) as it is more reliable for future proofing.
 
 <br>
 
@@ -433,7 +426,7 @@ Here is the breakdown of how **Hierarchical Multi-Agent System** operates:
 
 <br>
 
-Download Link ⇉ [Hierarchical Multi-Agent Systeml](https://github.com/Percedal15019/AI-Automation/blob/main/workflow/Multi%20Agentic%20Model.json)
+> Download Link ⇉ [Hierarchical Multi-Agent Systeml](https://github.com/Percedal15019/AI-Automation/blob/main/workflow/Multi%20Agentic%20Model.json)
 
 <br>
 
@@ -441,12 +434,11 @@ This architecture is designed for enterprise-grade personal assistance. Instead 
 
 <br>
 
-**🔴 NOTE:**
-
-1. To enable the Gmail API, it would have to enable it from the [Google Cloud](https://cloud.google.com), search for Gamil and enable it from there.\
-2. Remember to save your Accounts Client Id and Clint Secret to a safe place.
-3. Sometimes the [News Fetcher](https://newsapi.org) may give the latest news (I think thats for the paid plan but it still gives a valid and correct news)
-4. Also, its recommended to use [Postgres Chat Memory](https://www.postgresql.org/) as it is more reliable for future proofing.
+> [!NOTE]
+> 1. To enable the Gmail API, it would have to enable it from the [Google Cloud](https://cloud.google.com), search for Gamil and enable it from there.\
+> 2. Remember to save your Accounts Client Id and Clint Secret to a safe place.
+> 3. Sometimes the [News Fetcher](https://newsapi.org) may give the latest news (I think thats for the paid plan but it still gives a valid and correct news)
+> 4. Also, its recommended to use [Postgres Chat Memory](https://www.postgresql.org/) as it is more reliable for future proofing.
 
 <br>
 
